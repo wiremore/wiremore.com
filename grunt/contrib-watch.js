@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 				'concat', 
 				'cssmin', 
 				'autoprefixer', 
-				'rev', 
+				//'rev', 
 				'usemin'
 			]
 

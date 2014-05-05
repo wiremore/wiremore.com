@@ -94,45 +94,43 @@ footer {
 }
 
 #wrapper {
-	width: 100%;
+
 	min-height: 270px;
-}
+	width: 100%;
 
-#wrapper > .inner {
-	width: 90%;
-	max-width: 1024px;
-	margin: auto;
-	min-width: 300px;
-	position: relative;
-	height: 100%;
-	vertical-align: middle;
-}
+	 > .inner {
+		width: 90%;
+		max-width: 1024px;
+		margin: auto;
+		min-width: 300px;
+		position: relative;
+		height: 100%;
+		vertical-align: middle;
+	}
 
-#wrapper > .inner > .vmid {
-	vertical-align: middle;
 }
 
 #logo-wrapper {
+
 	margin: 5% auto 0px auto;
-	position: relative;
 	min-width: 300px;
 	max-width: 100%;
+	position: relative;
 	width: 600px;
-}
 
-#logo-wrapper:before {
-	content: "";
-	display: block;
-	position: relative;
-	padding-bottom: 36.5%;
-}
+	&:before {
+		content: "";
+		display: block;
+		position: relative;
+		padding-bottom: 36.5%;
+	}
 
+	&.edge {
+		margin: 0;
+		transform: none;
+		width: 300px;
+	}
 
-#tv:before {
-	content: "";
-	display: block;
-	position: relative;
-	padding-bottom: 43.5%;
 }
 
 #tv {
@@ -145,56 +143,65 @@ footer {
 	margin-top: -32%;
 	margin-bottom: 40px;
 	max-width: 100%;
+
+	&:before {
+		content: "";
+		display: block;
+		position: relative;
+		padding-bottom: 43.5%;
+	}
+
 }
+
 
 /* position within tv */
 #logo {
+
 	position: absolute;
 	left: 25%;
 	top: 40%;
 	width: 33%;
+
+	&:after {
+		content: "";
+	}
+
+	&:after, 
+	.inner {
+
+		-moz-animation: shaky 0.25s infinite;
+		-webkit-animation: shaky 0.25s infinite;
+		animation: shaky 0.25s infinite;
+		background: transparent url(../img/bgs/logo.svg) no-repeat 50% 0;
+		-webkit-background-size: 100% auto;
+		-moz-background-size: 100% auto;
+		-o-background-size: 100% auto;
+		background-size: 100% auto;
+		display: inline-block;
+		max-width: 667px;
+		overflow: hidden;
+
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		position: relative;
+		padding-bottom: 34.78260869565217391304347826087%;
+	}
+
+	/* css animation on pseudo elements doesnt work on ios */
+	:after {
+		display: none;
+	}
+
 }
-
-
-#logo:after {
-	content: "";
-}
-
-#logo:after, #logo .inner {
-
-	display: inline-block;
-	overflow: hidden;
-	-moz-animation: shaky 0.25s infinite;
-	-webkit-animation: shaky 0.25s infinite;
-	animation: shaky 0.25s infinite;
-	background: transparent url(../img/bgs/logo.svg) no-repeat 50% 0;
-	-webkit-background-size: 100% auto;
-	-moz-background-size: 100% auto;
-	-o-background-size: 100% auto;
-	background-size: 100% auto;
-	max-width: 667px;
-
-	position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-}
-
-#logo:before {
-	content: "";
-	display: block;
-	position: relative;
-	padding-bottom: 34.78260869565217391304347826087%;
-}
-
-/* css animation on pseudo elements doesnt work on ios */
-#logo:after {
-	display: none;
-}
-
-
 
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
