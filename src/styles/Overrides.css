@@ -1,0 +1,11 @@
+body {
+    font-size: 22px;
+}
+
+:root {
+    --color-primary: #0061c3 !important;
+    --color-secondary: #d1ff00;
+    /* --color-contrast: #d1ff00; */
+    --color-accent: var(--color-primary) !important;
+    --footer-link-hover: #88a600;
+}

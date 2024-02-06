@@ -1,0 +1,13 @@
+.wrapper {
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--footer-link-hover);
+    }
+
+    p {
+        margin-top: 0;
+    }
+}

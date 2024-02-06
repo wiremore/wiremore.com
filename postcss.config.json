@@ -1,0 +1,28 @@
+{
+    "plugins": [
+        "postcss-flexbugs-fixes",
+        [
+            "@csstools/postcss-global-data",
+            {
+                "files": [
+                    "node_modules/@manuel-bieh/design-system/dist/media.css",
+                    "node_modules/@manuel-bieh/design-system/dist/variables.css"
+                ]
+            }
+        ],
+        "postcss-nested",
+        "postcss-custom-media",
+        [
+            "postcss-preset-env",
+            {
+                "autoprefixer": {
+                    "flexbox": "no-2009"
+                },
+                "stage": 3,
+                "features": {
+                    "custom-properties": false
+                }
+            }
+        ]
+    ]
+}

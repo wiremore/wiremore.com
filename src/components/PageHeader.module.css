@@ -1,0 +1,67 @@
+.wrapper {
+    text-align: center;
+
+    hgroup {
+        margin-bottom: -16px;
+    }
+
+    h1,
+    h2 {
+        margin: 0;
+    }
+
+    h1 a {
+        text-decoration: none;
+        border-bottom: 3px solid;
+        margin-bottom: 8px;
+        display: inline-block;
+        padding-bottom: 4px;
+    }
+
+    h1 a,
+    h1 a:hover {
+        color: var(--color-primary);
+    }
+
+    h2 {
+        margin-top: 16px;
+    }
+
+    nav {
+        /* margin-left: -16px; */
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li a {
+        color: #f9f9f9;
+        display: inline-block;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    nav li a.active,
+    nav li a:hover {
+        /* color: yellow; */
+        color: var(--color-secondary);
+    }
+
+    nav span {
+        color: var(--color-secondary);
+        display: inline-block;
+        padding: 8px;
+        text-decoration: underline;
+    }
+}
+
+.logoWrapper svg {
+    /* fill: yellow; */
+    fill: var(--color-secondary);
+    width: 200px;
+}
