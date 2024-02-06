@@ -1,6 +1,6 @@
 // import '@/styles/globals.css';
 import '@manuel-bieh/design-system/dist/index.css';
-import '@/components/Layout.css';
+import '@/styles/Layout.css';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import { Grid, Column } from '@manuel-bieh/design-system';

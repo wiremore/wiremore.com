@@ -19,10 +19,7 @@ const routes: { [route: string]: string } = {
 };
 
 const PageHeader = () => {
-    const {
-        t,
-        i18n: { language },
-    } = useTranslation();
+    const { t } = useTranslation();
 
     const { pathname } = useRouter();
 
@@ -44,21 +41,6 @@ const PageHeader = () => {
             </Grid>
             <Grid centered style={{ marginBottom: -32 }}>
                 <Column xs={12}>
-                    {/* <nav>
-                        <ul style={{ float: 'right', listStyle: 'none' }}>
-                            <li style={{ float: 'left' }}>
-                                {['de', 'en'].map((languageCode) =>
-                                    languageCode === language ? (
-                                        <span key={languageCode}>{languageCode.toUpperCase()}</span>
-                                    ) : (
-                                        <Link key={languageCode} href={pathname} locale={languageCode}>
-                                            {languageCode.toUpperCase()}
-                                        </Link>
-                                    )
-                                )}
-                            </li>
-                        </ul>
-                    </nav> */}
                     <nav>
                         <ul>
                             {Object.keys(routes).map((route: string) => (
