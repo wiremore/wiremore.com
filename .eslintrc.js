@@ -70,5 +70,6 @@ module.exports = {
         'consistent-return': 'off',
         'no-param-reassign': 'off',
         'global-require': 'off',
+        'react/jsx-no-useless-fragment': 'off',
     },
 };

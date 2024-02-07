@@ -5,23 +5,23 @@ import React from 'react';
 import Link from 'next/link';
 // import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 // import AnimatedLogo from '../../public/assets/img/animated-logo-css.svg';
 import AnimatedLogo from './AnimatedLogo';
 import css from './PageHeader.module.css';
 
-const routes: { [route: string]: string } = {
-    home: '/',
-    // profile: '/profile',
-    clients: '/clients',
-    technologies: '/technologies',
-    // publications: '/publications',
-};
+// const routes: { [route: string]: string } = {
+//     home: '/',
+//     // profile: '/profile',
+//     clients: '/clients',
+//     technologies: '/technologies',
+//     // publications: '/publications',
+// };
 
 const PageHeader = () => {
     const { t } = useTranslation();
 
-    const { pathname } = useRouter();
+    // const { pathname } = useRouter();
 
     return (
         <Header className={css.wrapper}>
@@ -33,13 +33,13 @@ const PageHeader = () => {
                     <hgroup>
                         <h2>
                             {t('header.subhead')}
-                            <br />
-                            {t('header.subhead2')}
+                            {/* <br />
+                            {t('header.subhead2')} */}
                         </h2>
                     </hgroup>
                 </Column>
             </Grid>
-            <Grid centered style={{ marginBottom: -32 }}>
+            {/* <Grid centered style={{ marginBottom: -32 }}>
                 <Column xs={12}>
                     <nav>
                         <ul>
@@ -53,7 +53,7 @@ const PageHeader = () => {
                         </ul>
                     </nav>
                 </Column>
-            </Grid>
+            </Grid> */}
         </Header>
     );
 };
