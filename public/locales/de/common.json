@@ -9,7 +9,7 @@
     },
     "header": {
         "title": "Wiremore",
-        "subhead": "Application Development and Consulting",
+        "subhead": "Software Development and Consulting",
         "subhead2": ""
     },
     "footer": {
@@ -26,10 +26,10 @@
     "home": {
         "title": "Hallo!",
         "clients": {
-            "title": "Kunden, die Wert auf Qualität legen"
+            "title": "Kunden, die besonderen Wert auf Qualität legen"
         },
         "text": [
-            "<strong>Wiremore</strong> entwickelt mit Begeisterung nutzerfreundliche Frontends und funktionierende Online-Anwendungen für Kunden, die Wert auf Qualität legen. Alles weitere gibt es <2>hier</2>."
+            "<strong>Wiremore</strong> entwickelt mit Begeisterung nutzerfreundliche User Interfaces und leistungsstarke Online-Anwendungen für Kunden, die besonderen Wert auf Qualität legen. Weitere Informationen gibt es <2>hier</2>."
         ]
     },
     "contact": {

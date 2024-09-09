@@ -7,6 +7,7 @@ module.exports = {
         defaultLocale: 'default',
         // localeDetection: false,
     },
+    reloadOnPrerender: process.env.NODE_ENV === 'development',
     returnObjects: true,
     resources: {
         de: {

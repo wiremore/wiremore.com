@@ -26,43 +26,17 @@ export default function Home() {
             <Grid>
                 <Column xs={12}>
                     <p>
-                        {/* <strong>Wiremore</strong> entwickelt mit Begeisterung nutzerfreundliche Frontends und
-                        funktionierende Online-Anwendungen für Kunden, die Wert auf Qualität legen. Alles weitere gibt
-                        es <Link href="https://www.manuelbieh.de">hier</Link>. */}
                         <Trans i18nKey="home.text.0">
-                            <strong>Wiremore</strong> entwickelt mit Begeisterung nutzerfreundliche Frontends und
-                            funktionierende Online-Anwendungen für Kunden, die Wert auf Qualität legen. Alles weitere
-                            gibt es <Link href={`https://www.manuelbieh.de/${language}`}>hier</Link>
-                        </Trans>
-                        {/* Treten Sie gern mit
-                        uns in <Link href="/contact">Kontakt</Link> oder informieren Sie sich über unser Angebot auf der
-ührers <Link href="https://www.manuelbieh.de">Manuel Bieh</Link>. */}
-                    </p>
-                    {/*
-                    <p dangerouslySetInnerHTML={{ __html: t('home.text.0') }} />
-                     <p>
-                        <Trans i18nKey="home.text.1">
-                            0<Link href="/clients">1</Link>2<Link href="/technologies">3</Link>4<>5</>.
+                            <strong>Wiremore</strong> entwickelt mit Begeisterung nutzerfreundliche User Interfaces und
+                            leistungsstarke Online-Anwendungen für Kunden, die besonderen Wert auf Qualität legen.
+                            Weitere informationen <Link href={`https://www.manuelbieh.de/${language}`}>hier</Link>.
                         </Trans>
                     </p>
-                    <p>{t('home.text.2')}</p>
-                    <ul>
-                        {(t('home.services') as unknown as string[]).map((item) => (
-                            <li key={item} dangerouslySetInnerHTML={{ __html: item }} />
-                        ))}
-                    </ul>
-                    <p>{t('home.text.3')}</p>
-                </Column>
-                <Column xs={12} lg={4}>
-                    <Image
-                        src={Portrait}
-                        alt="Photo Manuel Bieh"
-                        style={{ width: 530, aspectRatio: 530 / 700, height: 'auto' }}
-                    /> */}
                 </Column>
             </Grid>
             <Grid>
                 <Column textAlign="center">
+                    <br />
                     <h1>{t('home.clients.title')}</h1>
                 </Column>
             </Grid>
