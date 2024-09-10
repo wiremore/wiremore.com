@@ -18,11 +18,11 @@ export default function Home() {
             <Head>
                 <title>{t('meta.titleTemplate', { title: t('home.title') })}</title>
             </Head>
-            <Grid>
+            {/* <Grid>
                 <Column textAlign="center">
                     <h1>{t('home.title')}</h1>
                 </Column>
-            </Grid>
+            </Grid> */}
             <Grid>
                 <Column xs={12}>
                     <p>
