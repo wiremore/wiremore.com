@@ -46,8 +46,8 @@ const PageFooter = () => {
                         </strong>
                     </p>
                     <p>
-                        <strong>wiremore&nbsp;UG (haftungsbeschränkt)</strong> – Zelterstr.&nbsp;10 – 10439&nbsp;Berlin
-                        – manuel.bieh@wiremore.com
+                        <strong>wiremore&nbsp;GmbH</strong> – Zelterstr.&nbsp;10 – 10439&nbsp;Berlin –
+                        manuel.bieh@wiremore.com
                         <br />
                         <strong>Geschäftsführer:</strong> Manuel&nbsp;Bieh – <strong>Registergericht:</strong>{' '}
                         Handelsregister Amtsgericht Dortmund – HRB 25711 – <strong>Ust-Id:</strong> DE289451798

@@ -23,7 +23,7 @@ export default function Page() {
                     {t('legal.note') && <p>{t('legal.note')}</p>}
                     <h2>Angaben gemäß § 5 TMG</h2>
                     <p>
-                        wiremore UG (haftungsbeschränkt)
+                        wiremore GmbH
                         <br />
                         Zelterstr. 10
                         <br />
