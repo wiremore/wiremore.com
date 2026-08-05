@@ -13,9 +13,9 @@ import css from './prose.module.css';
  * self-hosts its fonts, so the only processing worth declaring is server logs and email.
  * That is also why there is no consent banner: nothing here needs consent.
  *
- * NOTE FOR REVIEW: the hosting section does not name a provider, because the deployment
- * target is not recorded in this repository. Name the processor (and reference the
- * AV-Vertrag) before this goes live, and have a lawyer read the page.
+ * Hosting is Vercel, confirmed from DNS (76.76.21.21, `server: Vercel`, fra1) and the
+ * repository homepage. The AV-Vertrag with Vercel still needs to be on file, and a lawyer
+ * should read this page before it goes live.
  */
 const Privacy = () => {
     const { t } = useTranslation();
@@ -59,10 +59,18 @@ const Privacy = () => {
                         keine Verarbeitung statt, die Ihrer Einwilligung bedürfte.
                     </p>
 
-                    <h2>3. Server-Logfiles</h2>
+                    <h2>3. Hosting</h2>
                     <p>
-                        Beim Aufruf dieser Website werden durch den Hosting-Dienstleister, der für uns als
-                        Auftragsverarbeiter tätig ist, automatisch Informationen erfasst, die Ihr Browser übermittelt:
+                        Diese Website wird bei der Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.
+                        Vercel ist für uns als Auftragsverarbeiter nach Art. 28 DSGVO tätig; die Auslieferung erfolgt
+                        über Server in Frankfurt am Main. Für Datenübermittlungen in die USA stützt sich Vercel auf die
+                        Standardvertragsklauseln der EU-Kommission.
+                    </p>
+
+                    <h2>4. Server-Logfiles</h2>
+                    <p>
+                        Beim Aufruf dieser Website werden durch den Hosting-Dienstleister automatisch Informationen
+                        erfasst, die Ihr Browser übermittelt:
                     </p>
                     <ul>
                         <li>die aufgerufene Adresse und die übertragene Datenmenge</li>
@@ -79,7 +87,7 @@ const Privacy = () => {
                         Datenquellen findet nicht statt, und eine Auswertung zu Marketingzwecken erfolgt nicht.
                     </p>
 
-                    <h2>4. Sprachauswahl</h2>
+                    <h2>5. Sprachauswahl</h2>
                     <p>
                         Beim Aufruf der Startseite werten wir die von Ihrem Browser ohnehin mitgesendete
                         Spracheinstellung (Accept-Language) aus, um Sie auf die deutsche oder englische Fassung
@@ -87,7 +95,7 @@ const Privacy = () => {
                         dabei nichts auf Ihrem Gerät gespeichert und nichts protokolliert.
                     </p>
 
-                    <h2>5. Kontaktaufnahme per E-Mail</h2>
+                    <h2>6. Kontaktaufnahme per E-Mail</h2>
                     <p>
                         Diese Website enthält kein Kontaktformular. Wenn Sie uns eine E-Mail schreiben, verarbeiten wir
                         Ihre Angaben zur Bearbeitung Ihrer Anfrage und für den Fall, dass sich Anschlussfragen ergeben.
@@ -99,20 +107,20 @@ const Privacy = () => {
                         gesetzliche Aufbewahrungsfristen stehen dem entgegen.
                     </p>
 
-                    <h2>6. Weitergabe von Daten</h2>
+                    <h2>7. Weitergabe von Daten</h2>
                     <p>
                         Eine Weitergabe Ihrer Daten an Dritte findet nicht statt, außer an den oben genannten
                         Hosting-Dienstleister im Rahmen der Auftragsverarbeitung sowie in Fällen, in denen wir hierzu
                         gesetzlich verpflichtet sind.
                     </p>
 
-                    <h2>7. Verschlüsselung</h2>
+                    <h2>8. Verschlüsselung</h2>
                     <p>
                         Diese Website wird ausschließlich über eine mit TLS verschlüsselte Verbindung ausgeliefert,
                         erkennbar am <code>https://</code> in der Adresszeile Ihres Browsers.
                     </p>
 
-                    <h2>8. Ihre Rechte</h2>
+                    <h2>9. Ihre Rechte</h2>
                     <p>Sie haben uns gegenüber jederzeit das Recht auf:</p>
                     <ul>
                         <li>Auskunft über die zu Ihrer Person gespeicherten Daten (Art. 15 DSGVO)</li>
@@ -128,7 +136,7 @@ const Privacy = () => {
                         Datenschutz und Informationsfreiheit.
                     </p>
 
-                    <h2>9. Änderungen dieser Erklärung</h2>
+                    <h2>10. Änderungen dieser Erklärung</h2>
                     <p>
                         Wir passen diese Datenschutzerklärung an, sobald sich die Verarbeitung auf dieser Website
                         ändert — etwa wenn wir künftig Reichweitenmessung einsetzen sollten.
