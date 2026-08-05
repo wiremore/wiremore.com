@@ -47,7 +47,7 @@ export const CLIENTS: Client[] = [
     { name: 'Migros', file: 'migros.svg', sectors: ['commerce'], viaAgency: 'Aperto' },
     { name: 'Rossmann', file: 'rossmann.svg', sectors: ['commerce'], viaAgency: 'Aperto' },
     { name: 'DocMorris', file: 'docmorris.svg', sectors: ['health', 'commerce'], viaAgency: 'Publicis Pixelpark' },
-    { name: 'Schmitz Cargobull', file: 'schmitzcargobull.svg', sectors: ['logistics', 'industry'] },
+    { name: 'Schmitz Cargobull', file: 'schmitzcargobull.svg', sectors: ['logistics', 'industry', 'automotive'] },
     { name: 'Spark Networks', file: 'spark.svg', sectors: ['media'] },
     { name: 'Dampsoft', file: 'dampsoft.svg', sectors: ['health'] },
     { name: 'VR Smart Finanz', file: 'vr-smart-finanz.svg', sectors: ['finance'] },
