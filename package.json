@@ -1,51 +1,39 @@
 {
-  "name": "next-manuelbieh.de",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@manuel-bieh/cv": "^1.0.17",
-    "@manuel-bieh/design-system": "^0.0.8",
-    "i18next": "^23.8.1",
-    "next": "14.1.0",
-    "next-i18next": "^15.2.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-i18next": "^14.0.1"
-  },
-  "devDependencies": {
-    "@csstools/postcss-global-data": "^2.1.1",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^6.19.1",
-    "@typescript-eslint/parser": "^6.19.1",
-    "eslint": "^8",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-next": "14.1.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-prefer-arrow": "^1.2.3",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-sort-class-members": "^1.19.0",
-    "eslint-plugin-storybook": "^0.6.15",
-    "eslint-plugin-typescript-sort-keys": "^3.1.0",
-    "eslint-plugin-unused-imports": "^3.0.0",
-    "postcss": "^8.4.0",
-    "postcss-custom-media": "^10.0.2",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-nested": "^6.0.1",
-    "postcss-preset-env": "^9.3.0",
-    "prettier": "^3.2.4",
-    "sharp": "^0.33.2",
-    "typescript": "^5"
-  }
+    "name": "wiremore.com",
+    "version": "2.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "type-check": "tsc --noEmit",
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "classnames": "^2.5.1",
+        "i18next": "^25.8.0",
+        "next": "^15.5.4",
+        "next-i18next": "^15.4.3",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-i18next": "^16.5.4"
+    },
+    "devDependencies": {
+        "@csstools/postcss-global-data": "^4.0.0",
+        "@types/node": "^22",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^8",
+        "eslint-config-next": "^15.5.4",
+        "eslint-config-prettier": "^10.1.8",
+        "postcss": "^8.5.6",
+        "postcss-custom-media": "^12.0.0",
+        "postcss-flexbugs-fixes": "^5.0.2",
+        "postcss-nested": "^7.0.2",
+        "postcss-preset-env": "^11.1.2",
+        "prettier": "^3.8.1",
+        "typescript": "^5.9.3",
+        "vitest": "^3.2.4"
+    }
 }

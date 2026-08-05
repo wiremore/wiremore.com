@@ -1,0 +1,67 @@
+/* A contact sheet rather than a marketing carousel: hairline cells, equal weight, no
+   logo allowed to shout over its neighbours. The 1px gap plus a background rule draws
+   the grid without doubled borders. */
+.wall {
+    background-color: var(--rule);
+    border: 1px solid var(--rule);
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    padding: 0;
+}
+
+@media (--sm) {
+    .wall {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (--md) {
+    .wall {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (--lg) {
+    .wall {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.cell {
+    align-items: center;
+    aspect-ratio: 5 / 3;
+    background-color: var(--paper);
+    display: flex;
+    justify-content: center;
+    padding: var(--space-5);
+}
+
+/* brightness(0) flattens every mark to a solid silhouette regardless of its own colour.
+   Plain grayscale leaves pale logos (Porsche's crest, Daimler's star) almost invisible
+   next to dark ones, which reads as a broken image rather than a restrained one. */
+.logo {
+    filter: grayscale(1) brightness(0);
+    height: auto;
+    max-height: 2.4rem;
+    object-fit: contain;
+    opacity: 0.45;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Stepped, not smooth. Three frames is the difference between a modern fade and
+   something switching on. */
+@media (--motion-ok) {
+    .logo {
+        transition:
+            filter 90ms var(--ease-steps),
+            opacity 90ms var(--ease-steps);
+    }
+}
+
+.cell:hover .logo {
+    filter: none;
+    opacity: 1;
+}

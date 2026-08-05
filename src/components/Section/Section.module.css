@@ -1,0 +1,81 @@
+.section {
+    padding: var(--space-9) 0;
+}
+
+.dim {
+    background-color: var(--paper-dim);
+    border-block: 1px solid var(--rule);
+}
+
+.dark {
+    background-color: var(--dark);
+    color: var(--dark-ink);
+    position: relative;
+}
+
+.dark::before {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgb(255 255 255 / 6%) 0,
+        rgb(255 255 255 / 6%) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.dark .label,
+.dark .lead {
+    color: var(--dark-muted);
+}
+
+.dark .index {
+    border-right-color: var(--dark-rule);
+    color: var(--dark-ink);
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: var(--shell);
+    padding: 0 var(--gutter);
+}
+
+.head {
+    margin-bottom: var(--space-7);
+    max-width: 44rem;
+}
+
+.label {
+    align-items: baseline;
+    color: var(--muted);
+    display: flex;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    gap: var(--space-3);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-5);
+    text-transform: uppercase;
+}
+
+/* The section number sits behind a rule, the way a spec document numbers its clauses. */
+.index {
+    border-right: 1px solid var(--rule);
+    color: var(--ink);
+    padding-right: var(--space-3);
+}
+
+.title {
+    font-size: var(--step-3);
+    font-weight: 500;
+}
+
+.lead {
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    line-height: 1.5;
+    margin-top: var(--space-4);
+    max-width: var(--measure);
+}

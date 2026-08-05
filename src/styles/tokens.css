@@ -1,0 +1,69 @@
+:root {
+    /* --- Colour ------------------------------------------------------------
+       Paper is warm rather than clinical white; phosphor is the monitor
+       green-yellow carried over from the old site. Phosphor is rationed: roughly
+       four appearances per page. */
+    --paper: #fafaf8;
+    --paper-dim: #f1f1ec;
+    --ink: #0b0b0c;
+    --ink-soft: #2a2a2d;
+    --muted: #6b6b70;
+    --rule: #e2e2db;
+    --phosphor: #d1ff00;
+    --phosphor-deep: #8ba800;
+    --dark: #111214;
+    --dark-soft: #1b1c1f;
+    --dark-ink: #f4f4f0;
+    --dark-muted: #8f8f95;
+    --dark-rule: rgb(255 255 255 / 14%);
+
+    /* --- Type --------------------------------------------------------------
+       --font-sans and --font-mono are NOT declared here. They are composed from the
+       --font-archivo / --font-plex-mono variables that next/font puts on .appRoot, and a
+       custom property is resolved against the element it is declared on — declaring them
+       at :root would resolve against variables that do not exist there, computing to
+       invalid and inheriting down empty. They live in globals.css on .appRoot instead. */
+    --step-mono: 0.75rem;
+    --step--1: 0.875rem;
+    --step-0: 1.0625rem;
+    --step-1: 1.25rem;
+    --step-2: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+    --step-3: clamp(2rem, 1.4rem + 3vw, 3.25rem);
+    --step-4: clamp(2.75rem, 1.2rem + 7vw, 6rem);
+
+    --leading-tight: 1.02;
+    --leading-snug: 1.2;
+    --leading-body: 1.6;
+
+    /* --- Space ------------------------------------------------------------- */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4.5rem;
+    --space-9: 7rem;
+    --space-10: 10rem;
+
+    --measure: 34rem;
+    --shell: 82rem;
+    --gutter: var(--space-5);
+
+    /* --- Motion ------------------------------------------------------------ */
+    --dur-fast: 120ms;
+    --dur-med: 320ms;
+    --dur-slow: 620ms;
+    --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+    /* Stepped easing is the actual period tell — a smooth fade reads as 2024, a
+       three-frame snap reads as a CRT. */
+    --ease-steps: steps(3, end);
+}
+
+@media (--md) {
+    :root {
+        --gutter: var(--space-7);
+    }
+}

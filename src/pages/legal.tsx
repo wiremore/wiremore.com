@@ -1,156 +1,107 @@
-import type { GetStaticProps } from 'next';
-import Head from 'next/head';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-// import Link from 'next/link';
-import { Grid, Column } from '@manuel-bieh/design-system';
+import Meta from '@/components/Meta/Meta';
+import PageIntro from '@/components/PageIntro/PageIntro';
+import Section from '@/components/Section/Section';
+import { CONTACT } from '@/config/contact';
+import { translatedPage } from '@/utils/translatedPage';
+import css from './prose.module.css';
 
-export default function Page() {
+/**
+ * German only, deliberately. The Impressum is a legal document under German law and a
+ * translation of it has no legal standing — an English version would only invite the
+ * question of which one counts.
+ *
+ * Citations updated from the previous site: the TMG was replaced by the DDG in 2024 and
+ * the RStV by the MStV in 2020. Reviewed for accuracy, not a substitute for legal advice.
+ */
+const Legal = () => {
     const { t } = useTranslation();
+
     return (
         <>
-            <Head>
-                <title>{t('meta.titleTemplate', { title: t('legal.title') })}</title>
-            </Head>
+            <Meta description={t('meta.descriptions.legal')} title={t('legal.title')} />
 
-            <Grid>
-                <Column textAlign="center">
-                    <h1>{t('legal.title')}</h1>
-                </Column>
-            </Grid>
-            <Grid>
-                <Column xs={12}>
-                    {t('legal.note') && <p>{t('legal.note')}</p>}
-                    <h2>Angaben gemäß § 5 TMG</h2>
-                    <p>
-                        wiremore GmbH
-                        <br />
-                        Zelterstr. 10
-                        <br />
-                        10439 Berlin
-                    </p>
+            <PageIntro title={t('legal.title')} />
 
+            <Section>
+                <div className={css.prose}>
+                    <p className={css.note}>{t('legal.note')}</p>
+
+                    <h2>Angaben gemäß § 5 DDG</h2>
+                    <address>
+                        {CONTACT.company}
+                        <br />
+                        {CONTACT.street}
+                        <br />
+                        {CONTACT.city}
+                    </address>
+
+                    <h3>Vertreten durch</h3>
+                    <p>Geschäftsführer: {CONTACT.managingDirector}</p>
+
+                    <h3>Kontakt</h3>
                     <p>
-                        <strong>Handelsregister beim Amtsgericht Dortmund:</strong>
-                        <br />
-                        HRB 25711
-                    </p>
-                    <p>
-                        <strong>Umsatzsteueridentifikationsnummer</strong>
-                        <br />
-                        DE289451798
-                    </p>
-                    <p>
-                        <strong>Geschäftsführer</strong>
-                        <br />
-                        Manuel Bieh (inhaltlich verantwortlich nach § 55 Abs. 2 RStV)
-                        <br />
-                        manuel.bieh@wiremore.com
+                        E-Mail: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                     </p>
 
-                    <h2>Datenschutz</h2>
-                    <h3>Geltungsbereich</h3>
+                    <h3>Registereintrag</h3>
+                    <p>Eingetragen im Handelsregister, {CONTACT.register}</p>
+
+                    <h3>Umsatzsteuer-Identifikationsnummer</h3>
+                    <p>Gemäß § 27 a Umsatzsteuergesetz: {CONTACT.vatId}</p>
+
+                    <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+                    <address>
+                        {CONTACT.managingDirector}
+                        <br />
+                        {CONTACT.street}
+                        <br />
+                        {CONTACT.city}
+                    </address>
+
+                    <h2>Streitbeilegung</h2>
                     <p>
-                        Diese Datenschutzerklärung klärt Nutzer über die Art, den Umfang und Zwecke der Erhebung und
-                        Verwendung personenbezogener Daten durch den verantwortlichen Anbieter [Manuel Bieh, Zelterstr.
-                        10, 10439 Berlin] auf dieser Website (im folgenden “Angebot”) auf. Die rechtlichen Grundlagen
-                        des Datenschutzes finden sich im Bundesdatenschutzgesetz (BDSG) und dem Telemediengesetz (TMG).
+                        Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+                        Verbraucherschlichtungsstelle teilzunehmen.
                     </p>
-                    <h3>Zugriffsdaten/ Server-Logfiles</h3>
+
+                    <h2>Haftung für Inhalte</h2>
                     <p>
-                        Der Anbieter (beziehungsweise sein Webspace-Provider) erhebt Daten über jeden Zugriff auf das
-                        Angebot (so genannte Serverlogfiles). Zu den Zugriffsdaten gehören:
+                        Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
+                        verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+                        Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+                        Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen
+                        nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist erst ab
+                        dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden
+                        entsprechender Rechtsverletzungen entfernen wir diese Inhalte umgehend.
                     </p>
-                    <ul>
-                        <li>Name der abgerufenen Webseite,</li>
-                        <li>Datei,</li>
-                        <li>Datum und Uhrzeit des Abrufs,</li>
-                        <li>übertragene Datenmenge,</li>
-                        <li>Meldung über erfolgreichen Abruf,</li>
-                        <li>BGridsertyp nebst Version,</li>
-                        <li>das Betriebssystem des Nutzers,</li>
-                        <li>Referrer URL (die zuvor besuchte Seite),</li>
-                        <li>IP-Adresse und der anfragende Provider.</li>
-                    </ul>
+
+                    <h2>Haftung für Links</h2>
                     <p>
-                        Der Anbieter verwendet die Protokolldaten nur für statistische Auswertungen zum Zweck des
-                        Betriebs, der Sicherheit und der Optimierung des Angebotes. Der Anbieterbehält sich jedoch vor,
-                        die Protokolldaten nachträglich zu überprüfen, wenn aufgrund konkreter Anhaltspunkte der
-                        berechtigte Verdacht einer rechtswidrigen Nutzung besteht.
+                        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss
+                        haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+                        Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+                        Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft;
+                        rechtswidrige Inhalte waren zu diesem Zeitpunkt nicht erkennbar. Bei Bekanntwerden von
+                        Rechtsverletzungen entfernen wir derartige Links umgehend.
                     </p>
-                    <h3>Umgang mit personenbezogenen Daten</h3>
+
+                    <h2>Urheberrecht</h2>
                     <p>
-                        Personenbezogene Daten sind Informationen, mit deren Hilfe eine Person bestimmbar ist, also
-                        Angaben, die zurück zu einer Person verfolgt werden können. Dazu gehören der Name, die
-                        Emailadresse oder die Telefonnummer. Aber auch Daten über Vorlieben, Hobbies, Mitgliedschaften
-                        oder welche Webseiten von jemandem angesehen wurden zählen zu personenbezogenen Daten.
+                        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+                        deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+                        Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
+                        jeweiligen Autors bzw. Erstellers. Marken und Logos Dritter sind Eigentum der jeweiligen
+                        Rechteinhaber und werden hier ausschließlich zur Referenz auf durchgeführte Projekte verwendet.
                     </p>
-                    <p>
-                        Personenbezogene Daten werden von dem Anbieter nur dann erhoben, genutzt und weiter gegeben,
-                        wenn dies gesetzlich erlaubt ist oder die Nutzer in die Datenerhebung einwilligen.
-                    </p>
-                    <h3>Kontaktaufnahme</h3>
-                    <p>
-                        Bei der Kontaktaufnahme mit dem Anbieter (zum Beispiel per Kontaktformular oder E-Mail) werden
-                        die Angaben des Nutzers zwecks Bearbeitung der Anfrage sowie für den Fall, dass Anschlussfragen
-                        entstehen, gespeichert.
-                    </p>
-                    <h3>Kommentare und Beiträge</h3>
-                    <p>
-                        Wenn Nutzer Kommentare im Blog oder sonstige Beiträge hinterlassen, werden ihre IP-Adressen
-                        gespeichert. Das erfolgt zur Sicherheit des Anbieters, falls jemand in Kommentaren und Beiträgen
-                        widerrechtliche Inhalte schreibt (Beleidigungen, verbotene politische Propaganda, etc.). In
-                        diesem Fall kann der Anbieter selbst für den Kommentar oder Beitrag belangt werden und ist daher
-                        an der Identität des Verfassers interessiert.
-                    </p>
-                    <h3>Einbindung von Diensten und Inhalten Dritter</h3>
-                    <p>
-                        Es kann vorkommen, dass innerhalb dieses Onlineangebotes Inhalte Dritter, wie zum Beispiel
-                        Videos von YouTube, Kartenmaterial von Google-Maps, RSS-Feeds oder Grafiken von anderen
-                        Webseiten eingebunden werden. Dies setzt immer voraus, dass die Anbieter dieser Inhalte
-                        (nachfolgend bezeichnet als „Dritt-Anbieter“) die IP-Adresse der Nutzer wahr nehmen. Denn ohne
-                        die IP-Adresse, könnten sie die Inhalte nicht an den BGridser des jeweiligen Nutzers senden. Die
-                        IP-Adresse ist damit für die Darstellung dieser Inhalte erforderlich. Wir bemühen uns nur solche
-                        Inhalte zu verwenden, deren jeweilige Anbieter die IP-Adresse lediglich zur Auslieferung der
-                        Inhalte verwenden. Jedoch haben wir keinen Einfluss darauf, falls die Dritt-Anbieter die
-                        IP-Adresse z.B. für statistische Zwecke speichern. Soweit dies uns bekannt ist, klären wir die
-                        Nutzer darüber auf.
-                    </p>
-                    <h3>Google Analytics</h3>
-                    <p>
-                        Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. („Google“).
-                        Google Analytics verwendet sog. „Cookies“, Textdateien, die auf Ihrem Computer gespeichert
-                        werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. Die durch den Cookie
-                        erzeugten Informationen über Ihre Benutzung dieser Website (einschließlich Ihrer IP-Adresse)
-                        wird an einen Server von Google in den USA übertragen und dort gespeichert. Google wird diese
-                        Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die
-                        Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der
-                        Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird
-                        Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich
-                        vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in
-                        keinem Fall Ihre IP-Adresse mit anderen Daten, die von Google gespeichert werden, in Verbindung
-                        bringen. Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer
-                        BGridser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall
-                        gegebenenfalls nicht sämtliche Funktionen dieser Website voll umfänglich nutzen können. Durch
-                        die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten
-                        durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck
-                        einverstanden.
-                    </p>
-                    <h3>Widerruf, Änderungen, Berichtigungen und Aktualisierungen</h3>
-                    <p>
-                        Der Nutzer hat das Recht, auf Antrag unentgeltlich Auskunft zu erhalten über die
-                        personenbezogenen Daten, die über ihn gespeichert wurden. Zusätzlich hat der Nutzer das Recht
-                        auf Berichtigung unrichtiger Daten, Sperrung und Löschung seiner personenbezogenen Daten, soweit
-                        dem keine gesetzliche Aufbewahrungspflicht entgegensteht.
-                    </p>
-                </Column>
-            </Grid>
+
+                    <p className={css.updated}>Stand: August 2026</p>
+                </div>
+            </Section>
         </>
     );
-}
+};
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-    props: {
-        ...(await serverSideTranslations(locale ?? 'en')),
-    },
-});
+export const getStaticProps = translatedPage;
+
+export default Legal;

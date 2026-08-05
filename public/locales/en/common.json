@@ -1,51 +1,308 @@
 {
-    "test": "Good day",
-    "time": {
-        "since": "since"
-    },
     "meta": {
-        "title": "Wiremore. Web Application Development and Consulting",
-        "titleTemplate": "{{title}} – Wiremore. Web Application Development and Consulting"
+        "siteName": "wiremore",
+        "defaultTitle": "wiremore — product engineering studio, Berlin",
+        "descriptions": {
+            "home": "wiremore is a product engineering studio in Berlin. We build, rescue and lead product software for companies that cannot afford to get it wrong.",
+            "whatWeDo": "Three ways we work: building new products, rescuing codebases that became fragile, and interim technical leadership.",
+            "howWeWork": "Few projects at a time, senior people only, quality enforced rather than intended. How a small studio holds a large team’s quality bar.",
+            "work": "Selected clients: Porsche, Daimler, Zalando, Börse Stuttgart Digital Exchange, Klarna, TomTom and others.",
+            "studio": "wiremore GmbH, Berlin. Independent, deliberately small, backed by a network of senior professionals.",
+            "contact": "Tell us what you are building. Email is the fastest way to reach the studio.",
+            "legal": "Legal information for wiremore GmbH, Berlin.",
+            "privacy": "How wiremore GmbH handles personal data on this website."
+        }
     },
-    "header": {
-        "title": "Wiremore",
-        "subhead": "Software Development and Consulting",
-        "subhead2": ""
-    },
-    "footer": {
-        "legal": "Legal information",
-        "contact": "Contact"
-    },
+
     "navigation": {
-        "home": "Home",
-        "profile": "Profile",
-        "clients": "Clients",
-        "technologies": "Technologies",
-        "publications": "Publications"
+        "label": "Main",
+        "skip": "Skip to content",
+        "whatWeDo": "What we do",
+        "howWeWork": "How we work",
+        "work": "Work",
+        "studio": "Studio",
+        "contact": "Contact",
+        "legal": "Legal notice",
+        "privacy": "Privacy"
     },
+
+    "footer": {
+        "tagline": "Product engineering studio. Berlin. Building software for other people’s companies for over a decade.",
+        "contactLabel": "Contact",
+        "siteLabel": "Site",
+        "legalLabel": "Legal",
+        "address": "wiremore GmbH<br />Zelterstr. 10<br />10439 Berlin",
+        "copyright": "© {{year}} wiremore GmbH",
+        "built": "Made in Berlin"
+    },
+
     "home": {
-        "title": "Hello!",
-        "clients": {
-            "title": "Customers who value quality"
+        "eyebrow": "Product engineering studio · Berlin",
+        "title": "We build product software for companies that can’t afford to get it wrong.",
+        "lead": "wiremore is a small studio in Berlin. We have been doing this for over a decade, mostly for people who came back.",
+        "cta": "Start a conversation",
+        "services": {
+            "index": "01",
+            "label": "What we do",
+            "title": "Three ways we are useful.",
+            "items": [
+                {
+                    "name": "Build",
+                    "text": "New products and platforms, from the first commit to production. We are useful from the whiteboard onward, because the decisions that get expensive are made early."
+                },
+                {
+                    "name": "Rescue",
+                    "text": "Codebases that became slow, fragile, or that nobody wants to own. We find out why, say so plainly, and then fix it — usually without a rewrite."
+                },
+                {
+                    "name": "Lead",
+                    "text": "Interim technical leadership. Architecture, hiring, review culture, mentoring: the work that leaves a team able to carry on without us."
+                }
+            ],
+            "more": "All three in detail"
         },
-        "text": [
-            "<strong>Wiremore</strong> passionately develops user-friendly frontends and functional online applications for customers who value quality. Find out more <2>here</2>."
+        "clients": {
+            "index": "02",
+            "label": "Selected work",
+            "title": "Some of the companies we have built for.",
+            "more": "See the full list"
+        },
+        "method": {
+            "index": "03",
+            "label": "How we work",
+            "title": "We take on few projects at a time. That is the whole method.",
+            "items": [
+                {
+                    "name": "Senior people only",
+                    "text": "Nobody learns on your budget."
+                },
+                {
+                    "name": "Agents do volume, we do direction",
+                    "text": "Nothing ships that we cannot explain."
+                },
+                {
+                    "name": "Quality is enforced, not intended",
+                    "text": "Types, tests, review, CI — standards a tired person still meets."
+                }
+            ],
+            "more": "The rest of how we work"
+        },
+        "contact": {
+            "index": "04",
+            "label": "Contact",
+            "title": "Tell us what you are building.",
+            "text": "A rough idea of the problem, the timeline and what already exists is usually enough for a first useful answer."
+        }
+    },
+
+    "whatWeDo": {
+        "title": "What we do",
+        "lead": "Three kinds of engagement. Most projects start as one and quietly become another, which is fine — we would rather be useful than tidy.",
+        "itemsLabel": "Typical engagements",
+        "offerings": [
+            {
+                "index": "01",
+                "name": "Build",
+                "lead": "New products and platforms, from the first commit to production.",
+                "body": [
+                    "Most of what makes software expensive is decided in the first few weeks: the data model, the boundaries between systems, what the team is allowed to assume. We want to be there for that part, and to still be there when it ships.",
+                    "We work in your repository, in your process, with your people. Not a black box that returns a deliverable and an invoice."
+                ],
+                "items": [
+                    "Greenfield web and mobile products",
+                    "Design systems and component libraries",
+                    "Frontend architecture and API surface design",
+                    "Prototype through to production launch"
+                ]
+            },
+            {
+                "index": "02",
+                "name": "Rescue",
+                "lead": "Codebases that became slow, fragile, or that nobody wants to own.",
+                "body": [
+                    "We start with an audit and a written verdict: what is actually wrong, what it is costing you, and what we would do about it in which order. Sometimes that document is the entire engagement. More often we stay and do the work.",
+                    "A rewrite is the last option, not the first. Most systems can be brought back incrementally while they keep serving users, and the ones that genuinely cannot are rarer than people think."
+                ],
+                "items": [
+                    "Architecture, performance and stability audits",
+                    "Incremental modernization and migrations",
+                    "Test coverage and CI foundations",
+                    "Handovers from agencies or departing teams"
+                ]
+            },
+            {
+                "index": "03",
+                "name": "Lead",
+                "lead": "Interim technical leadership for teams that are between people, or growing faster than they can hire.",
+                "body": [
+                    "We take responsibility rather than seats: technical direction, architecture decisions, interviewing, review culture, mentoring. The kind of work that does not show up in a sprint report but decides how the next year goes.",
+                    "The goal is to become unnecessary. We write down what we know and leave the team able to carry it."
+                ],
+                "items": [
+                    "Interim tech lead and engineering management",
+                    "Architecture and technology decisions",
+                    "Technical hiring and interviewing",
+                    "Mentoring and knowledge transfer"
+                ]
+            }
+        ],
+        "closing": {
+            "title": "Not sure which one you need?",
+            "text": "That is usually a good reason to talk. A first conversation costs nothing and often resolves the question by itself."
+        }
+    },
+
+    "howWeWork": {
+        "title": "How we work",
+        "lead": "Quality is a process, not a promise. This is ours — written down, because principles that are never stated are not principles.",
+        "principles": [
+            {
+                "index": "01",
+                "name": "We take on few projects at a time",
+                "text": [
+                    "Attention does not scale and neither does judgment. Taking on fewer clients is the only reliable method we know for keeping the quality of the work honest.",
+                    "It also means we sometimes say no, or say later. We would rather do that than quietly give you less than you are paying for."
+                ]
+            },
+            {
+                "index": "02",
+                "name": "Senior people only",
+                "text": [
+                    "Nobody learns on your budget. Everyone who touches your project has shipped this kind of thing before.",
+                    "When a project needs more hands or another discipline, we bring in people from our network — developers, designers and specialists we have worked with and would work with again. We do not answer a staffing problem by hiring a stranger and hoping."
+                ]
+            },
+            {
+                "index": "03",
+                "name": "We work in the open",
+                "text": [
+                    "In your repository, your tracker, your channels. You can see what is happening on any given day rather than at the end of a sprint.",
+                    "If something is going badly, you will hear it from us first, and early enough to still do something about it."
+                ]
+            },
+            {
+                "index": "04",
+                "name": "Agents do volume. We do direction.",
+                "text": [
+                    "We use AI agents heavily, and we are precise about where. They are good at breadth: migrations, test coverage, mechanical refactors, boilerplate, the fiftieth variation of a form. They are not good at deciding what should exist.",
+                    "Architecture, trade-offs and review stay with us. Nothing ships that we cannot explain line by line, and nothing is merged because a machine sounded confident.",
+                    "The point is not speed for its own sake. It is that a small studio can now hold a quality bar that used to need a large team — which is exactly why we can stay small."
+                ]
+            },
+            {
+                "index": "05",
+                "name": "Quality is enforced, not intended",
+                "text": [
+                    "Types, tests, review and CI. Standards that a tired person on a Friday afternoon still meets, because the pipeline does not let anything else through.",
+                    "Good intentions are not a quality strategy. Neither is a document nobody reads."
+                ]
+            },
+            {
+                "index": "06",
+                "name": "We leave things owned",
+                "text": [
+                    "Documentation, runbooks, decision records, and a team that can carry on. An engagement that ends with the knowledge walking out of the door has failed, however good the code was.",
+                    "The best outcome is that you need us less next year than this one."
+                ]
+            }
         ]
     },
+
+    "work": {
+        "title": "Work",
+        "lead": "Startups, corporations, and a good deal in between. Direct engagements and work delivered through agencies.",
+        "sectorsLabel": "Sectors",
+        "sectors": "Automotive · Banking and regulated finance · E-commerce · Health · Media · Logistics · Mobility",
+        "clientsLabel": "Selected clients",
+        "note": "adidas on behalf of Sevenval. Migros and Rossmann on behalf of Aperto. DocMorris on behalf of Publicis Pixelpark.",
+        "nda": {
+            "title": "And the rest",
+            "text": "A good part of our work is under NDA and will not appear on a website. If you want detail on something specific — a sector, a problem, a scale — ask us directly and we will tell you what we can."
+        }
+    },
+
+    "studio": {
+        "title": "Studio",
+        "lead": "wiremore is a product engineering studio in Berlin. Independent, deliberately small, and older than most of the tools it works with.",
+        "company": {
+            "index": "01",
+            "label": "The company",
+            "title": "Small on purpose.",
+            "text": [
+                "We have been building software for other people’s companies for over a decade, as wiremore GmbH, from Berlin — for clients in Germany, Switzerland and further afield.",
+                "We have never wanted to be an agency. Growing headcount changes what a studio is: more of the work becomes managing the work. We would rather stay at the size where the people who talk to you are the people who build the thing."
+            ]
+        },
+        "principal": {
+            "index": "02",
+            "label": "Principal",
+            "title": "Manuel Bieh",
+            "text": [
+                "wiremore was founded and is run by Manuel Bieh. He has been building for the web for 25 years and has worked with React since its early days.",
+                "He wrote <book>React Deep Dive</book> — 320 pages, and the first comprehensive book about React written in German. He has led teams as interim tech lead, worked as architect and developer, and shipped in automotive, regulated finance, media, logistics and health.",
+                "More detail, and a full CV, at <site>manuelbieh.de</site>."
+            ]
+        },
+        "network": {
+            "index": "03",
+            "label": "The network",
+            "title": "Around the studio.",
+            "text": [
+                "Around wiremore is a network of senior developers, designers and specialists built up over two decades of working together — people we have shipped with, argued with, and would happily do both with again.",
+                "When a project needs another discipline or more hands than the studio has, that is where they come from. It is the reason a small studio can take on work that looks too big for it, and the reason we do not need to grow to say yes."
+            ]
+        },
+        "products": {
+            "index": "04",
+            "label": "Our own products",
+            "title": "We build for ourselves, too.",
+            "lead": "It keeps us honest about what shipping actually costs — deadlines nobody set for us, and no client to blame.",
+            "items": [
+                {
+                    "name": "Unbogify",
+                    "text": "A golf swing analysis app: 240 fps capture, frame-by-frame review and pose detection on device. On the App Store worldwide."
+                },
+                {
+                    "name": "Barhopper’s Guide",
+                    "text": "A city bar guide, taken from first idea to worldwide App Store and Google Play release in three months."
+                }
+            ]
+        }
+    },
+
     "contact": {
         "title": "Contact",
-        "text": [
-            "I'm glad you want to get in touch with me. Since I'm getting a lot of uninteresting cold calls I'm ignoring my phone if an unknown number is calling. So in case we haven't been in contact yet or you're not sure if I still got your number just send me an email and provide me with some information what I can do for you. We can then arrange a phonecall if necessary.",
-            "Manuel Bieh<br />Zelterstr. 10<br />10439 Berlin",
-            "Phone: (+49) 177 2951165<br />Email: manuel.bieh@wiremore.com"
-        ]
+        "lead": "Email is the best way to reach us.",
+        "body": [
+            "Tell us what you are building, roughly when you need it, and what already exists. That is usually enough for a first useful answer rather than a discovery call about having a discovery call.",
+            "If it turns out we are not the right studio for the job, we will say so — and where we can, point you at someone who is."
+        ],
+        "emailLabel": "Email",
+        "addressLabel": "Address",
+        "phoneNote": "We do not list a phone number. Email gets a faster answer, and it gives us something to think about before we reply."
     },
+
     "legal": {
-        "title": "Legal information",
-        "note": "This page is required by German law. It's only available in German."
+        "title": "Legal notice",
+        "note": "Required under German law and therefore only available in German."
     },
-    "404": {
-        "title": "Oops, this page does not exist.",
-        "text": ["Looks like you tried to access a non-existing page. I'm sorry for that."]
+
+    "privacy": {
+        "title": "Privacy",
+        "note": "Required under German law and therefore only available in German."
+    },
+
+    "notFound": {
+        "code": "404",
+        "title": "Signal lost.",
+        "text": "This page does not exist. It is possible it never did.",
+        "back": "Back to the start"
+    },
+
+    "serverError": {
+        "code": "500",
+        "title": "Something broke on our side.",
+        "text": "Not your fault. Try again in a moment.",
+        "back": "Back to the start"
     }
 }

@@ -1,0 +1,131 @@
+.screen {
+    background-color: var(--dark);
+    color: var(--dark-ink);
+    overflow: hidden;
+    padding: var(--space-10) 0;
+    position: relative;
+}
+
+.screen::before {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgb(255 255 255 / 7%) 0,
+        rgb(255 255 255 / 7%) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    z-index: 2;
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: var(--shell);
+    padding: 0 var(--gutter);
+    position: relative;
+    z-index: 1;
+}
+
+.code {
+    color: var(--phosphor);
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.3em;
+    margin-bottom: var(--space-5);
+}
+
+.title {
+    font-size: var(--step-4);
+    font-stretch: 105%;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: var(--leading-tight);
+}
+
+.text {
+    color: var(--dark-muted);
+    font-size: var(--step-1);
+    margin-top: var(--space-5);
+    max-width: 34rem;
+}
+
+.back {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.08em;
+    margin-top: var(--space-7);
+    text-transform: uppercase;
+}
+
+.back::before {
+    content: '← ';
+}
+
+/* The only place on the site where the nostalgia is allowed off its leash: a vertical
+   hold that will not quite lock, and a headline misregistering its colour channels. */
+@media (--motion-ok) {
+    .lost .title {
+        animation: misregister 5.5s steps(1, end) infinite;
+    }
+
+    .lost::after {
+        animation: roll 7s linear infinite;
+        background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(209 255 0 / 4%) 40%,
+            rgb(255 255 255 / 7%) 50%,
+            rgb(209 255 0 / 4%) 60%,
+            transparent
+        );
+        content: '';
+        height: 22%;
+        inset-inline: 0;
+        pointer-events: none;
+        position: absolute;
+        top: -25%;
+        z-index: 3;
+    }
+}
+
+@keyframes roll {
+    0% {
+        top: -25%;
+    }
+
+    70%,
+    100% {
+        top: 105%;
+    }
+}
+
+@keyframes misregister {
+    0%,
+    92% {
+        text-shadow: none;
+        transform: none;
+    }
+
+    93% {
+        text-shadow:
+            -2px 0 rgb(255 0 90 / 80%),
+            2px 0 rgb(0 214 255 / 80%);
+        transform: translateX(1px);
+    }
+
+    95% {
+        text-shadow:
+            2px 0 rgb(255 0 90 / 60%),
+            -2px 0 rgb(0 214 255 / 60%);
+        transform: translateX(-2px);
+    }
+
+    97% {
+        text-shadow: none;
+        transform: none;
+    }
+}

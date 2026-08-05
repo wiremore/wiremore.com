@@ -101,7 +101,13 @@ one cursor. The restraint is the point.
 
 ### Type
 
-Geist Sans and Geist Mono, self-hosted via the `geist` package and `next/font`.
+**Archivo** and **IBM Plex Mono**, self-hosted through `next/font/google`.
+
+Geist was the original choice and was dropped: it is the Vercel default and every second
+site now wears it, which is the opposite of a studio with a point of view. Archivo carries
+a width axis, so the hero can go poster-wide without a second display face, and Plex Mono
+has a quieter period resonance than any deliberately retro font would.
+
 Monospace carries section labels (`01 / WHAT WE DO`), navigation, the language switch and
 captions — it reads simultaneously as terminal and as engineering precision.
 
@@ -158,7 +164,16 @@ implemented:
 
 - Middleware reads `Accept-Language` on a first visit to `/`, redirects to `/en` or `/de`,
   and records the result in a `NEXT_LOCALE` cookie.
-- A visible `EN | DE` toggle overrides the cookie at any time.
+- A visible `EN | DE` toggle overrides the cookie at any time. Visiting any locale-prefixed
+  URL refreshes the cookie, so a choice made from the toggle or a shared link sticks.
+
+Two traps, both hit during implementation and both silent:
+
+- With a `src/` directory, middleware must live at `src/middleware.ts`. At the repository
+  root it is simply never invoked, and nothing warns about it.
+- The usual `'/((?!_next|api|.*\\..*).*)'` matcher does not match the bare root, so `/` —
+  the one route that actually needs language detection — was skipped. The matcher lists
+  `'/'` explicitly.
 
 English is the default and the fallback for any missing key. The cookie is strictly
 functional, which is why the site needs no consent banner.
