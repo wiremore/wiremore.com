@@ -1,0 +1,82 @@
+.hero {
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    padding: var(--space-9) 0 var(--space-8);
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: var(--shell);
+    padding: 0 var(--gutter);
+}
+
+.eyebrow {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+}
+
+/* The width axis is what makes this read as a poster rather than a big paragraph.
+   font-stretch narrows it back toward normal on small screens, where wide type wraps
+   into an unreadable stack. */
+.title {
+    font-size: var(--step-4);
+    font-stretch: 92%;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: var(--leading-tight);
+    max-width: 18ch;
+}
+
+@media (--md) {
+    .title {
+        font-stretch: 105%;
+        max-width: 20ch;
+    }
+}
+
+.foot {
+    border-top: 1px solid var(--rule);
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: 1fr;
+    margin-top: var(--space-8);
+    padding-top: var(--space-5);
+}
+
+@media (--md) {
+    .foot {
+        align-items: start;
+        grid-template-columns: 1fr auto;
+        gap: var(--space-7);
+    }
+}
+
+.lead {
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    line-height: 1.45;
+    max-width: 38rem;
+}
+
+.cta {
+    align-items: center;
+    display: inline-flex;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.cta::before {
+    background-color: var(--phosphor);
+    content: '';
+    height: 8px;
+    margin-right: var(--space-3);
+    width: 8px;
+}

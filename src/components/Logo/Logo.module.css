@@ -1,0 +1,120 @@
+.logo {
+    color: var(--ink);
+    height: auto;
+    width: 100%;
+}
+
+/* Resting state: the first hand-drawn variant, nothing moving. Everything below is
+   additive, so the mark is correct with all animation disabled. */
+.frame {
+    fill: currentcolor;
+    opacity: 0;
+}
+
+.frame:first-child {
+    opacity: 1;
+}
+
+@media (--motion-ok) {
+    /* A CRT does not fade up, it snaps on, overshoots and settles. */
+    .powerOn {
+        animation: power-on 520ms steps(1, end) 1 both;
+    }
+
+    .powerOn .frame {
+        animation-duration: 270ms;
+        animation-iteration-count: 4;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    .powerOn .frame:nth-child(1) {
+        animation-name: boil-a;
+    }
+
+    .powerOn .frame:nth-child(2) {
+        animation-name: boil-b;
+    }
+
+    .powerOn .frame:nth-child(3) {
+        animation-name: boil-c;
+    }
+}
+
+@keyframes power-on {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    16% {
+        opacity: 0.25;
+    }
+
+    24% {
+        opacity: 1;
+    }
+
+    34% {
+        opacity: 0.6;
+    }
+
+    44% {
+        opacity: 1;
+    }
+}
+
+/* Verbatim timing from the previous site. The three variants hand off at thirds; after
+   the final iteration variant A is the one left standing, which is why the mark settles
+   rather than ending on a blank frame. */
+@keyframes boil-a {
+    0% {
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    66.666% {
+        animation-timing-function: step-start;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes boil-b {
+    0%,
+    66.666% {
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    33.333% {
+        animation-timing-function: step-end;
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes boil-c {
+    0% {
+        animation-timing-function: step-end;
+        opacity: 1;
+    }
+
+    33.333% {
+        animation-timing-function: step-end;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

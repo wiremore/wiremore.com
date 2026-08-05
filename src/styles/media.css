@@ -1,0 +1,8 @@
+@custom-media --sm (min-width: 40rem);
+@custom-media --md (min-width: 60rem);
+@custom-media --lg (min-width: 80rem);
+@custom-media --xl (min-width: 100rem);
+
+/* Every animation in this codebase is wrapped in --motion-ok. The site is complete and
+   correct with all of it switched off. */
+@custom-media --motion-ok (prefers-reduced-motion: no-preference);

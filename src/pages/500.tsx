@@ -1,12 +1,24 @@
-import { GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import Meta from '@/components/Meta/Meta';
+import ErrorScreen from '@/components/ErrorScreen/ErrorScreen';
+import { translatedPage } from '@/utils/translatedPage';
 
-export default function Home() {
-    return <>500</>;
-}
+const ServerError = () => {
+    const { t } = useTranslation();
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-    props: {
-        ...(await serverSideTranslations(locale ?? 'en')),
-    },
-});
+    return (
+        <>
+            <Meta description={t('serverError.text')} title={t('serverError.title')} />
+            <ErrorScreen
+                back={t('serverError.back')}
+                code={t('serverError.code')}
+                text={t('serverError.text')}
+                title={t('serverError.title')}
+            />
+        </>
+    );
+};
+
+export const getStaticProps = translatedPage;
+
+export default ServerError;

@@ -1,0 +1,59 @@
+.switch {
+    align-items: baseline;
+    display: flex;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.08em;
+}
+
+.option {
+    color: var(--muted);
+    padding: var(--space-1) 0;
+    text-decoration: none;
+}
+
+.option:hover {
+    color: var(--ink);
+}
+
+.active {
+    color: var(--ink);
+}
+
+/* The active language sits on a phosphor underline — one of the accent's four
+   appearances per page. */
+.active::after {
+    background-color: var(--phosphor);
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 2px;
+    width: 100%;
+}
+
+@media (--motion-ok) {
+    .active::after {
+        animation: switch-flicker 240ms steps(1, end) 1;
+    }
+}
+
+.divider {
+    color: var(--rule);
+    padding: 0 var(--space-2);
+}
+
+@keyframes switch-flicker {
+    0%,
+    40% {
+        opacity: 0;
+    }
+
+    20%,
+    70% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0.4;
+    }
+}

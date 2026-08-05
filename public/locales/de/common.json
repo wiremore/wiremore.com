@@ -1,51 +1,317 @@
 {
-    "test": "Guten Tag!",
-    "time": {
-        "since": "seit"
-    },
     "meta": {
-        "title": "Wiremore. Web Application Development and Consulting",
-        "titleTemplate": "{{title}} – Wiremore. Web Application Development and Consulting"
+        "siteName": "wiremore",
+        "defaultTitle": "wiremore — Studio für Produktentwicklung, Berlin",
+        "descriptions": {
+            "home": "wiremore ist ein Studio für Produktentwicklung in Berlin. Wir bauen, retten und führen Softwareprodukte für Unternehmen, die sich Fehler nicht leisten können.",
+            "whatWeDo": "Drei Arten der Zusammenarbeit: neue Produkte bauen, fragil gewordene Codebasen retten, technische Führung auf Zeit.",
+            "howWeWork": "Wenige Projekte gleichzeitig, ausschließlich erfahrene Leute, Qualität erzwungen statt beabsichtigt. Wie ein kleines Studio den Qualitätsanspruch eines großen Teams hält.",
+            "work": "Ausgewählte Kunden: Porsche, Daimler, Zalando, Börse Stuttgart Digital Exchange, Klarna, TomTom und andere.",
+            "studio": "wiremore GmbH, Berlin. Unabhängig, bewusst klein, getragen von einem Netzwerk erfahrener Profis.",
+            "contact": "Erzählen Sie uns, was Sie bauen. Per E-Mail erreichen Sie das Studio am schnellsten.",
+            "legal": "Impressum der wiremore GmbH, Berlin.",
+            "privacy": "Wie die wiremore GmbH auf dieser Website mit personenbezogenen Daten umgeht."
+        }
     },
-    "header": {
-        "title": "Wiremore",
-        "subhead": "Software Development and Consulting",
-        "subhead2": ""
-    },
-    "footer": {
-        "legal": "Impressum",
-        "contact": "Kontakt"
-    },
+
     "navigation": {
-        "home": "Startseite",
-        "profile": "Profil",
-        "clients": "Kunden",
-        "technologies": "Technologien",
-        "publications": "Publikationen"
+        "label": "Hauptnavigation",
+        "skip": "Zum Inhalt springen",
+        "whatWeDo": "Was wir tun",
+        "howWeWork": "Wie wir arbeiten",
+        "work": "Arbeiten",
+        "studio": "Studio",
+        "contact": "Kontakt",
+        "legal": "Impressum",
+        "privacy": "Datenschutz"
     },
+
+    "footer": {
+        "tagline": "Studio für Produktentwicklung. Berlin. Seit über zehn Jahren Software für die Unternehmen anderer Leute.",
+        "contactLabel": "Kontakt",
+        "siteLabel": "Seiten",
+        "legalLabel": "Rechtliches",
+        "address": "wiremore GmbH<br />Zelterstr. 10<br />10439 Berlin",
+        "copyright": "© {{year}} wiremore GmbH",
+        "built": "Gemacht in Berlin"
+    },
+
     "home": {
-        "title": "Hallo!",
-        "clients": {
-            "title": "Kunden, die besonderen Wert auf Qualität legen"
+        "eyebrow": "Studio für Produktentwicklung · Berlin",
+        "title": "Wir bauen Produktsoftware für Unternehmen, die sich Fehler nicht leisten können.",
+        "lead": "wiremore ist ein kleines Studio in Berlin. Wir machen das seit über zehn Jahren – meistens für Leute, die wiedergekommen sind.",
+        "cta": "Gespräch beginnen",
+        "services": {
+            "index": "01",
+            "label": "Was wir tun",
+            "title": "Drei Arten, nützlich zu sein.",
+            "items": [
+                {
+                    "name": "Bauen",
+                    "text": "Neue Produkte und Plattformen, vom ersten Commit bis in den Betrieb. Wir sind schon am Whiteboard nützlich, weil die teuren Entscheidungen am Anfang fallen."
+                },
+                {
+                    "name": "Retten",
+                    "text": "Codebasen, die langsam oder fragil geworden sind oder die niemand mehr verantworten will. Wir finden heraus, woran es liegt, sagen es deutlich und bringen es in Ordnung – meist ohne Neuschreiben."
+                },
+                {
+                    "name": "Führen",
+                    "text": "Technische Führung auf Zeit. Architektur, Einstellungsgespräche, Review-Kultur, Mentoring: die Arbeit, nach der ein Team ohne uns weitermachen kann."
+                }
+            ],
+            "more": "Alle drei im Detail"
         },
-        "text": [
-            "<strong>Wiremore</strong> entwickelt mit Begeisterung nutzerfreundliche User Interfaces und leistungsstarke Online-Anwendungen für Kunden, die besonderen Wert auf Qualität legen. Weitere Informationen gibt es <2>hier</2>."
+        "clients": {
+            "index": "02",
+            "label": "Ausgewählte Arbeiten",
+            "title": "Einige der Unternehmen, für die wir gebaut haben.",
+            "more": "Vollständige Liste ansehen"
+        },
+        "method": {
+            "index": "03",
+            "label": "Wie wir arbeiten",
+            "title": "Wir nehmen wenige Projekte gleichzeitig an. Das ist die ganze Methode.",
+            "items": [
+                {
+                    "name": "Nur erfahrene Leute",
+                    "text": "Niemand lernt auf Ihre Rechnung."
+                },
+                {
+                    "name": "Agenten machen Menge, wir machen Richtung",
+                    "text": "Nichts geht live, was wir nicht erklären können."
+                },
+                {
+                    "name": "Qualität wird erzwungen, nicht beabsichtigt",
+                    "text": "Typen, Tests, Review, CI – Standards, die auch ein müder Mensch noch einhält."
+                }
+            ],
+            "more": "Der Rest unserer Arbeitsweise"
+        },
+        "contact": {
+            "index": "04",
+            "label": "Kontakt",
+            "title": "Erzählen Sie uns, was Sie bauen.",
+            "text": "Eine grobe Beschreibung des Problems, ein Zeitrahmen und was bereits existiert – das reicht meist für eine erste brauchbare Antwort."
+        }
+    },
+
+    "whatWeDo": {
+        "title": "Was wir tun",
+        "lead": "Drei Arten von Zusammenarbeit. Die meisten Projekte beginnen als das eine und werden unterwegs das andere. Das ist in Ordnung – wir sind lieber nützlich als ordentlich.",
+        "itemsLabel": "Typische Mandate",
+        "offerings": [
+            {
+                "index": "01",
+                "name": "Bauen",
+                "lead": "Neue Produkte und Plattformen, vom ersten Commit bis in den Betrieb.",
+                "body": [
+                    "Was Software teuer macht, entscheidet sich meist in den ersten Wochen: das Datenmodell, die Grenzen zwischen den Systemen, was das Team voraussetzen darf. Bei diesem Teil wollen wir dabei sein – und beim Livegang immer noch da.",
+                    "Wir arbeiten in Ihrem Repository, in Ihrem Prozess, mit Ihren Leuten. Keine Blackbox, die am Ende ein Ergebnis und eine Rechnung ausspuckt."
+                ],
+                "items": [
+                    "Web- und Mobile-Produkte auf der grünen Wiese",
+                    "Designsysteme und Komponentenbibliotheken",
+                    "Frontend-Architektur und Schnittstellendesign",
+                    "Vom Prototyp bis zum Produktivstart"
+                ]
+            },
+            {
+                "index": "02",
+                "name": "Retten",
+                "lead": "Codebasen, die langsam oder fragil geworden sind oder die niemand mehr verantworten will.",
+                "body": [
+                    "Wir beginnen mit einem Audit und einem schriftlichen Befund: was tatsächlich nicht stimmt, was es Sie kostet und was wir in welcher Reihenfolge dagegen tun würden. Manchmal ist dieses Dokument das ganze Projekt. Häufiger bleiben wir und machen die Arbeit.",
+                    "Ein Neuschreiben ist die letzte Option, nicht die erste. Die meisten Systeme lassen sich schrittweise zurückholen, während sie weiter im Einsatz sind – und die, bei denen das wirklich nicht geht, sind seltener als gedacht."
+                ],
+                "items": [
+                    "Audits zu Architektur, Performance und Stabilität",
+                    "Schrittweise Modernisierung und Migrationen",
+                    "Testabdeckung und CI-Grundlagen",
+                    "Übernahmen von Agenturen oder abziehenden Teams"
+                ]
+            },
+            {
+                "index": "03",
+                "name": "Führen",
+                "lead": "Technische Führung auf Zeit – für Teams zwischen zwei Besetzungen oder für solche, die schneller wachsen, als sie einstellen können.",
+                "body": [
+                    "Wir übernehmen Verantwortung, nicht Stühle: technische Richtung, Architekturentscheidungen, Einstellungsgespräche, Review-Kultur, Mentoring. Arbeit, die in keinem Sprintbericht auftaucht und trotzdem über das nächste Jahr entscheidet.",
+                    "Das Ziel ist, überflüssig zu werden. Wir schreiben auf, was wir wissen, und hinterlassen ein Team, das es tragen kann."
+                ],
+                "items": [
+                    "Technische Leitung und Engineering-Management auf Zeit",
+                    "Architektur- und Technologieentscheidungen",
+                    "Technische Einstellungsgespräche",
+                    "Mentoring und Wissenstransfer"
+                ]
+            }
+        ],
+        "closing": {
+            "title": "Unsicher, was davon Sie brauchen?",
+            "text": "Das ist meist ein guter Grund für ein Gespräch. Ein erstes Gespräch kostet nichts und klärt die Frage oft von selbst."
+        }
+    },
+
+    "howWeWork": {
+        "title": "Wie wir arbeiten",
+        "lead": "Qualität ist ein Verfahren, kein Versprechen. Das hier ist unseres – aufgeschrieben, weil Grundsätze, die man nie ausspricht, keine sind.",
+        "principles": [
+            {
+                "index": "01",
+                "name": "Wir nehmen wenige Projekte gleichzeitig an",
+                "text": [
+                    "Aufmerksamkeit skaliert nicht, Urteilsvermögen auch nicht. Weniger Kunden anzunehmen ist die einzige verlässliche Methode, die wir kennen, um die Qualität der Arbeit ehrlich zu halten.",
+                    "Das heißt auch, dass wir manchmal nein sagen oder später. Das ist uns lieber, als Ihnen still und leise weniger zu geben, als Sie bezahlen."
+                ]
+            },
+            {
+                "index": "02",
+                "name": "Nur erfahrene Leute",
+                "text": [
+                    "Niemand lernt auf Ihre Rechnung. Alle, die Ihr Projekt anfassen, haben so etwas schon einmal ausgeliefert.",
+                    "Wenn ein Projekt mehr Hände oder eine andere Disziplin braucht, holen wir Leute aus unserem Netzwerk dazu – Entwicklerinnen und Entwickler, Designer und Spezialisten, mit denen wir gearbeitet haben und wieder arbeiten würden. Wir lösen ein Besetzungsproblem nicht, indem wir eine fremde Person einstellen und hoffen."
+                ]
+            },
+            {
+                "index": "03",
+                "name": "Wir arbeiten sichtbar",
+                "text": [
+                    "In Ihrem Repository, Ihrem Ticketsystem, Ihren Kanälen. Sie sehen an jedem einzelnen Tag, was passiert – nicht erst am Ende eines Sprints.",
+                    "Wenn etwas schlecht läuft, hören Sie es von uns zuerst und früh genug, um noch etwas daran ändern zu können."
+                ]
+            },
+            {
+                "index": "04",
+                "name": "Agenten machen Menge. Wir machen Richtung.",
+                "text": [
+                    "Wir setzen KI-Agenten intensiv ein und sind genau darin, wo. Sie sind gut in der Breite: Migrationen, Testabdeckung, mechanische Refactorings, Boilerplate, die fünfzigste Variante eines Formulars. Sie sind nicht gut darin, zu entscheiden, was überhaupt existieren sollte.",
+                    "Architektur, Abwägungen und Review bleiben bei uns. Nichts geht live, was wir nicht Zeile für Zeile erklären können, und nichts wird übernommen, weil eine Maschine überzeugt geklungen hat.",
+                    "Es geht nicht um Tempo als Selbstzweck. Es geht darum, dass ein kleines Studio heute einen Qualitätsanspruch halten kann, für den früher ein großes Team nötig war – genau deshalb können wir klein bleiben."
+                ]
+            },
+            {
+                "index": "05",
+                "name": "Qualität wird erzwungen, nicht beabsichtigt",
+                "text": [
+                    "Typen, Tests, Review und CI. Standards, die auch am Freitagnachmittag noch eingehalten werden, weil die Pipeline nichts anderes durchlässt.",
+                    "Gute Absichten sind keine Qualitätsstrategie. Ein Dokument, das niemand liest, auch nicht."
+                ]
+            },
+            {
+                "index": "06",
+                "name": "Wir hinterlassen Eigentum",
+                "text": [
+                    "Dokumentation, Runbooks, festgehaltene Entscheidungen und ein Team, das weitermachen kann. Ein Projekt, an dessen Ende das Wissen zur Tür hinausgeht, ist gescheitert – so gut der Code auch war.",
+                    "Das beste Ergebnis ist, dass Sie uns nächstes Jahr weniger brauchen als dieses."
+                ]
+            }
         ]
     },
+
+    "work": {
+        "title": "Arbeiten",
+        "lead": "Startups, Konzerne und eine ganze Menge dazwischen. Direkte Mandate und Arbeiten, die über Agenturen liefen.",
+        "sectorsLabel": "Branchen",
+        "sectorsHint": "Zeigen Sie auf eine Branche, um sie aus der Wand herauszulösen.",
+        "sectors": {
+            "automotive": "Automotive",
+            "finance": "Banken und regulierte Finanzwirtschaft",
+            "commerce": "E-Commerce und Handel",
+            "health": "Gesundheit",
+            "media": "Medien",
+            "logistics": "Logistik und Mobilität",
+            "industry": "Industrie"
+        },
+        "clientsLabel": "Ausgewählte Kunden",
+        "note": "adidas im Auftrag von Sevenval. Migros und Rossmann im Auftrag von Aperto. DocMorris im Auftrag von Publicis Pixelpark.",
+        "nda": {
+            "title": "Und der Rest",
+            "text": "Ein guter Teil unserer Arbeit steht unter NDA und wird auf keiner Website auftauchen. Wenn Sie Genaueres wissen möchten – zu einer Branche, einem Problem, einer Größenordnung – fragen Sie uns direkt, und wir sagen Ihnen, was wir sagen können."
+        }
+    },
+
+    "studio": {
+        "title": "Studio",
+        "lead": "wiremore ist ein Studio für Produktentwicklung in Berlin. Unabhängig, bewusst klein und älter als die meisten Werkzeuge, mit denen es arbeitet.",
+        "company": {
+            "index": "01",
+            "label": "Das Unternehmen",
+            "title": "Klein mit Absicht.",
+            "text": [
+                "Wir bauen seit über zehn Jahren Software für die Unternehmen anderer Leute – als wiremore GmbH, aus Berlin, für Kunden in Deutschland, der Schweiz und darüber hinaus.",
+                "Wir wollten nie eine Agentur werden. Mehr Köpfe verändern, was ein Studio ist: Immer mehr Arbeit besteht darin, die Arbeit zu verwalten. Wir bleiben lieber in der Größe, in der die Leute, die mit Ihnen sprechen, auch die Leute sind, die das Ding bauen."
+            ]
+        },
+        "principal": {
+            "index": "02",
+            "label": "Inhaber",
+            "title": "Manuel Bieh",
+            "text": [
+                "wiremore wurde von Manuel Bieh gegründet und wird von ihm geführt. Er entwickelt seit 25 Jahren fürs Web und arbeitet mit React seit dessen Anfangszeit.",
+                "Er hat <book>React Deep Dive</book> geschrieben – 320 Seiten und das erste umfassende Buch über React in deutscher Sprache. Er hat Teams als technischer Leiter auf Zeit geführt, als Architekt und Entwickler gearbeitet und in Automotive, regulierter Finanzwirtschaft, Medien, Logistik und Gesundheit ausgeliefert.",
+                "Mehr dazu und ein vollständiger Lebenslauf auf <site>manuelbieh.de</site>."
+            ]
+        },
+        "network": {
+            "index": "03",
+            "label": "Das Netzwerk",
+            "title": "Rund um das Studio.",
+            "text": [
+                "Um wiremore herum liegt ein Netzwerk erfahrener Entwicklerinnen und Entwickler, Designer und Spezialisten, gewachsen über zwei Jahrzehnte gemeinsamer Arbeit – Leute, mit denen wir ausgeliefert und gestritten haben und beides gern wieder tun würden.",
+                "Wenn ein Projekt eine weitere Disziplin oder mehr Hände braucht, als das Studio hat, kommen sie von dort. Das ist der Grund, warum ein kleines Studio Arbeiten annehmen kann, die zu groß für es aussehen – und der Grund, warum wir nicht wachsen müssen, um ja zu sagen."
+            ]
+        },
+        "products": {
+            "index": "04",
+            "label": "Eigene Produkte",
+            "title": "Wir bauen auch für uns selbst.",
+            "lead": "Das hält uns ehrlich darüber, was Ausliefern wirklich kostet – Fristen, die uns niemand gesetzt hat, und kein Kunde, dem man die Schuld geben kann.",
+            "items": [
+                {
+                    "name": "Unbogify",
+                    "text": "Eine App zur Analyse des Golfschwungs: Aufnahme mit 240 Bildern pro Sekunde, Einzelbildanalyse und Posenerkennung auf dem Gerät. Weltweit im App Store."
+                },
+                {
+                    "name": "Barhopper’s Guide",
+                    "text": "Ein Bar-Guide für Städte, von der ersten Idee bis zur weltweiten Veröffentlichung in App Store und Google Play in drei Monaten."
+                }
+            ]
+        }
+    },
+
     "contact": {
         "title": "Kontakt",
-        "text": [
-            "Es freut mich wenn ich Sie neugigerig gemacht habe und Sie mit mir Kontakt aufnehmen möchten. Da ich eine Unmenge and Cold-Calls bekomme bin ich inzwischen dazu übergegangen Anrufe von Telefonnummern die ich nicht kenne zu ignorieren. Sollten wir also nicht bereits in Kontakt stehen bitte ich Sie mir stattdessen eine E-Mail zu schreiben und mir ihr Anliegen kurz zu schildern. Per E-Mail können wir dann gern einen Termin für ein Telefonat vereinbaren.",
-            "Manuel Bieh<br />Zelterstr. 10<br />10439 Berlin",
-            "Tel: (+49) 177 2951165<br />E-Mail: manuel.bieh@wiremore.com"
-        ]
+        "lead": "Am besten erreichen Sie uns per E-Mail.",
+        "body": [
+            "Erzählen Sie uns, was Sie bauen, ungefähr wann Sie es brauchen und was bereits existiert. Das reicht meist für eine erste brauchbare Antwort – statt für ein Vorgespräch über ein Vorgespräch.",
+            "Sollten wir das falsche Studio für die Aufgabe sein, sagen wir das. Und verweisen Sie, wenn wir können, an jemanden, der besser passt."
+        ],
+        "emailLabel": "E-Mail",
+        "addressLabel": "Adresse",
+        "phoneNote": "Wir geben keine Telefonnummer an. Eine E-Mail bekommt schneller eine Antwort – und gibt uns etwas, worüber wir vor der Antwort nachdenken können."
     },
+
     "legal": {
         "title": "Impressum",
-        "note": ""
+        "note": "Gesetzlich vorgeschrieben und daher nur auf Deutsch verfügbar."
     },
-    "404": {
-        "title": "Hoppla, diese Seite existiert nicht.",
-        "text": ["Sieht aus als hättest du eine Seite aufgerufen die nicht existiert. Das tut mir leid."]
+
+    "privacy": {
+        "title": "Datenschutz",
+        "note": "Gesetzlich vorgeschrieben und daher nur auf Deutsch verfügbar."
+    },
+
+    "notFound": {
+        "code": "404",
+        "title": "Kein Signal.",
+        "text": "Diese Seite existiert nicht. Möglicherweise hat sie das nie.",
+        "back": "Zurück zum Anfang"
+    },
+
+    "serverError": {
+        "code": "500",
+        "title": "Auf unserer Seite ist etwas kaputtgegangen.",
+        "text": "Nicht Ihre Schuld. Versuchen Sie es gleich noch einmal.",
+        "back": "Zurück zum Anfang"
     }
 }

@@ -1,5 +1,105 @@
-.clients {
-    img {
-        width: 108px;
+.services {
+    display: grid;
+    gap: var(--space-7);
+    grid-template-columns: 1fr;
+}
+
+@media (--md) {
+    .services {
+        gap: var(--space-6);
+        grid-template-columns: repeat(3, 1fr);
     }
+}
+
+.service {
+    border-top: 1px solid var(--ink);
+    padding-top: var(--space-4);
+}
+
+.serviceName {
+    font-size: var(--step-2);
+    font-weight: 500;
+    margin-bottom: var(--space-3);
+}
+
+.serviceText {
+    color: var(--ink-soft);
+    max-width: 30rem;
+}
+
+.more {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.08em;
+    margin-top: var(--space-7);
+    text-transform: uppercase;
+}
+
+.more::after {
+    content: ' →';
+}
+
+.note {
+    color: var(--muted);
+    font-size: var(--step--1);
+    margin-top: var(--space-5);
+}
+
+.principles {
+    border-top: 1px solid var(--rule);
+}
+
+.principle {
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    gap: var(--space-2);
+    grid-template-columns: 1fr;
+    padding: var(--space-5) 0;
+}
+
+@media (--md) {
+    .principle {
+        gap: var(--space-6);
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.principleName {
+    font-size: var(--step-1);
+    font-weight: 500;
+}
+
+.principleText {
+    color: var(--muted);
+}
+
+.contactBand {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: 1fr;
+}
+
+@media (--md) {
+    .contactBand {
+        align-items: end;
+        grid-template-columns: 1fr auto;
+    }
+}
+
+.contactText {
+    color: var(--dark-muted);
+    max-width: 34rem;
+}
+
+/* The address is the loudest single element on the page, which is the right priority for
+   a studio that wants an email rather than a form fill. */
+.contactEmail {
+    display: inline-block;
+    font-size: var(--step-2);
+    font-stretch: 105%;
+    letter-spacing: -0.02em;
+    text-decoration-color: var(--phosphor);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
 }

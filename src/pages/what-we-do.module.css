@@ -1,0 +1,112 @@
+.offering {
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: 1fr;
+}
+
+@media (--md) {
+    .offering {
+        gap: var(--space-8);
+        grid-template-columns: 5fr 7fr;
+    }
+}
+
+.aside {
+    position: relative;
+}
+
+@media (--md) {
+    .aside {
+        position: sticky;
+        top: var(--space-6);
+    }
+}
+
+.name {
+    font-size: var(--step-3);
+    font-stretch: 105%;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+}
+
+.tagline {
+    color: var(--ink-soft);
+    font-size: var(--step-1);
+    line-height: 1.45;
+    margin-top: var(--space-4);
+    max-width: 26rem;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.body p {
+    color: var(--ink-soft);
+    max-width: var(--measure);
+}
+
+.itemsLabel {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.1em;
+    margin-top: var(--space-3);
+    text-transform: uppercase;
+}
+
+.items {
+    border-top: 1px solid var(--rule);
+    list-style: none;
+    margin-top: var(--space-3);
+    padding: 0;
+}
+
+.items li {
+    border-bottom: 1px solid var(--rule);
+    padding: var(--space-3) 0 var(--space-3) var(--space-5);
+    position: relative;
+}
+
+/* A phosphor tick per row rather than a bullet — the accent doing structural work
+   instead of decoration. */
+.items li::before {
+    background-color: var(--phosphor);
+    content: '';
+    height: 6px;
+    left: 0;
+    position: absolute;
+    top: 1.45em;
+    width: 10px;
+}
+
+.closing {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+    max-width: 44rem;
+}
+
+.closingTitle {
+    font-size: var(--step-2);
+    font-weight: 500;
+}
+
+.closingText {
+    color: var(--dark-muted);
+}
+
+.closingLink {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.08em;
+    margin-top: var(--space-2);
+    text-transform: uppercase;
+}
+
+.closingLink::after {
+    content: ' →';
+}

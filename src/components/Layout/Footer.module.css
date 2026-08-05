@@ -1,0 +1,124 @@
+.footer {
+    background-color: var(--dark);
+    color: var(--dark-ink);
+
+    /* No margin: pages ending on a dark section would otherwise show a stripe of paper
+       between two dark blocks, which reads as a bug. Sections carry their own bottom
+       padding, so the colour change alone is enough separation on light pages. */
+    padding: var(--space-8) 0 var(--space-6);
+    position: relative;
+}
+
+/* Scanlines live only on dark surfaces, and they do not move. An animated scanline reads
+   as a screensaver; a static one reads as a screen. */
+.footer::before {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgb(255 255 255 / 6%) 0,
+        rgb(255 255 255 / 6%) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    content: '';
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
+.inner,
+.baseline {
+    margin: 0 auto;
+    max-width: var(--shell);
+    padding: 0 var(--gutter);
+    position: relative;
+}
+
+.inner {
+    display: grid;
+    gap: var(--space-7) var(--space-6);
+    grid-template-columns: 1fr;
+}
+
+@media (--sm) {
+    .inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (--md) {
+    .inner {
+        grid-template-columns: 1.4fr repeat(3, 1fr);
+    }
+}
+
+.brandColumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.mark {
+    color: var(--dark-ink);
+    width: 132px;
+}
+
+.tagline {
+    color: var(--dark-muted);
+    font-size: var(--step--1);
+    max-width: 22rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    font-size: var(--step--1);
+}
+
+.columnLabel {
+    color: var(--dark-muted);
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.address {
+    color: var(--dark-muted);
+    line-height: 1.5;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+}
+
+.footer a {
+    text-decoration-color: var(--dark-rule);
+}
+
+.footer a:hover {
+    text-decoration-color: var(--phosphor);
+}
+
+.baseline {
+    border-top: 1px solid var(--dark-rule);
+    color: var(--dark-muted);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    gap: var(--space-3);
+    justify-content: space-between;
+    letter-spacing: 0.04em;
+    margin-top: var(--space-8);
+    padding-top: var(--space-5);
+}
+
+.built {
+    color: var(--dark-muted);
+}

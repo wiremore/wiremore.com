@@ -1,36 +1,57 @@
-import type { GetStaticProps } from 'next';
-import Head from 'next/head';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
-// import Link from 'next/link';
-import { Grid, Column } from '@manuel-bieh/design-system';
+import Meta from '@/components/Meta/Meta';
+import PageIntro from '@/components/PageIntro/PageIntro';
+import Section from '@/components/Section/Section';
+import Reveal from '@/components/Reveal/Reveal';
+import Cursor from '@/components/Cursor/Cursor';
+import { CONTACT } from '@/config/contact';
+import { translatedPage } from '@/utils/translatedPage';
+import css from './contact.module.css';
 
-export default function Page() {
+const Contact = () => {
     const { t } = useTranslation();
+
+    const body = t('contact.body', { returnObjects: true }) as string[];
+
     return (
         <>
-            <Head>
-                <title>{t('meta.titleTemplate', { title: t('contact.title') })}</title>
-            </Head>
+            <Meta description={t('meta.descriptions.contact')} title={t('contact.title')} />
 
-            <Grid>
-                <Column textAlign="center">
-                    <h1>{t('contact.title')}</h1>
-                </Column>
-            </Grid>
-            <Grid>
-                <Column xs={12}>
-                    {(t('contact.text') as unknown as string[]).map((text: string) => (
-                        <p key={text} dangerouslySetInnerHTML={{ __html: text }} />
-                    ))}
-                </Column>
-            </Grid>
+            <PageIntro lead={t('contact.lead')} title={t('contact.title')} />
+
+            <Section>
+                <div className={css.layout}>
+                    <Reveal className={css.body}>
+                        <a className={css.email} href={`mailto:${CONTACT.email}`}>
+                            {CONTACT.email}
+                        </a>
+                        {body.map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                        ))}
+                    </Reveal>
+
+                    <Reveal className={css.details} delay={60}>
+                        <div>
+                            <p className={css.detailLabel}>{t('contact.addressLabel')}</p>
+                            <p className={css.address}>
+                                {CONTACT.company}
+                                <br />
+                                {CONTACT.street}
+                                <br />
+                                {CONTACT.city}
+                                <br />
+                                {CONTACT.country}
+                                <Cursor />
+                            </p>
+                        </div>
+                        <p className={css.phoneNote}>{t('contact.phoneNote')}</p>
+                    </Reveal>
+                </div>
+            </Section>
         </>
     );
-}
+};
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-    props: {
-        ...(await serverSideTranslations(locale ?? 'en')),
-    },
-});
+export const getStaticProps = translatedPage;
+
+export default Contact;

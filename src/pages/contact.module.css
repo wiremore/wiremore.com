@@ -1,0 +1,60 @@
+.layout {
+    display: grid;
+    gap: var(--space-7);
+    grid-template-columns: 1fr;
+}
+
+@media (--md) {
+    .layout {
+        gap: var(--space-8);
+        grid-template-columns: 7fr 5fr;
+    }
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.body p {
+    color: var(--ink-soft);
+    max-width: var(--measure);
+}
+
+.email {
+    display: inline-block;
+    font-size: var(--step-3);
+    font-stretch: 105%;
+    letter-spacing: -0.03em;
+    text-decoration-color: var(--phosphor);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+}
+
+.details {
+    border-top: 1px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding-top: var(--space-4);
+}
+
+.detailLabel {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-2);
+    text-transform: uppercase;
+}
+
+.address {
+    line-height: 1.5;
+}
+
+.phoneNote {
+    color: var(--muted);
+    font-size: var(--step--1);
+    max-width: 26rem;
+}

@@ -1,29 +1,25 @@
-import { Grid, Column } from '@manuel-bieh/design-system/dist/index.mjs';
-import { GetStaticProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Meta from '@/components/Meta/Meta';
+import ErrorScreen from '@/components/ErrorScreen/ErrorScreen';
+import { translatedPage } from '@/utils/translatedPage';
 
-export default function NotFound404() {
+const NotFound = () => {
     const { t } = useTranslation();
 
     return (
         <>
-            <Grid>
-                <Column>
-                    <h1>{t('404.title')}</h1>
-                </Column>
-            </Grid>
-            <Grid>
-                <Column>
-                    <p>{t('404.text.0')}</p>
-                </Column>
-            </Grid>
+            <Meta description={t('notFound.text')} title={t('notFound.title')} />
+            <ErrorScreen
+                back={t('notFound.back')}
+                code={t('notFound.code')}
+                lost
+                text={t('notFound.text')}
+                title={t('notFound.title')}
+            />
         </>
     );
-}
+};
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => ({
-    props: {
-        ...(await serverSideTranslations(locale ?? 'en')),
-    },
-});
+export const getStaticProps = translatedPage;
+
+export default NotFound;

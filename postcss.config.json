@@ -4,10 +4,7 @@
         [
             "@csstools/postcss-global-data",
             {
-                "files": [
-                    "node_modules/@manuel-bieh/design-system/dist/media.css",
-                    "node_modules/@manuel-bieh/design-system/dist/variables.css"
-                ]
+                "files": ["./src/styles/media.css"]
             }
         ],
         "postcss-nested",
