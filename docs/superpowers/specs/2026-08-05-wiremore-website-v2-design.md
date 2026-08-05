@@ -162,10 +162,14 @@ is no cross-repo coupling and no shared release cycle.
 The brief asked for "a browser language switch", which can mean two things. Both are
 implemented:
 
-- Middleware reads `Accept-Language` on a first visit to `/`, redirects to `/en` or `/de`,
-  and records the result in a `NEXT_LOCALE` cookie.
-- A visible `EN | DE` toggle overrides the cookie at any time. Visiting any locale-prefixed
-  URL refreshes the cookie, so a choice made from the toggle or a shared link sticks.
+- Middleware reads `Accept-Language` on any un-prefixed URL and redirects to `/en` or `/de`.
+- A visible `EN | DE` toggle overrides that at any time.
+
+The mechanism is **stateless — the site sets no cookies at all**. Language lives in the
+URL, so an explicit choice persists while browsing and in any shared or bookmarked link,
+but a later visit to the bare domain follows the browser again. That is a real if small
+cost, accepted because "we store nothing" is a far simpler position to hold than one
+functional cookie plus the disclosure that comes with it.
 
 Two traps, both hit during implementation and both silent:
 
@@ -175,8 +179,8 @@ Two traps, both hit during implementation and both silent:
   the one route that actually needs language detection — was skipped. The matcher lists
   `'/'` explicitly.
 
-English is the default and the fallback for any missing key. The cookie is strictly
-functional, which is why the site needs no consent banner.
+English is the default and the fallback for any missing key. With no cookies and no
+tracking of any kind, the site needs no consent banner.
 
 ### Content
 
@@ -195,10 +199,15 @@ The Impressum data is real and carried over unchanged:
 
 The existing privacy text is replaced. It predates the GDPR (it cites BDSG and TMG),
 describes Google Analytics and blog comments that do not exist on the site, and contains
-`BGridser` typos from a broken find-and-replace. The new Datenschutzerklärung describes
-what the site actually does: server logs, a functional locale cookie, email contact, no
-analytics, no third-party embeds. **It needs review by Manuel's lawyer before going
-live** — it is written to be accurate, not to be legal advice.
+`BGridser` typos from a broken find-and-replace.
+
+The new Datenschutzerklärung follows a conventional structure but claims only what the
+site actually does: server logs and email contact, and explicitly no cookies, no
+analytics, no third-party embeds, self-hosted fonts. **It needs review by Manuel's lawyer
+before going live**, and the hosting processor must be named — it is written to be
+accurate, not to be legal advice.
+
+The contact address across the site is `info@wiremore.com`.
 
 ## Verification
 

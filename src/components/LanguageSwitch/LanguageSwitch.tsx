@@ -6,9 +6,10 @@ import css from './LanguageSwitch.module.css';
 const LOCALES = ['en', 'de'] as const;
 
 /**
- * Explicit override for the language middleware picked. Visiting a locale-prefixed URL
- * updates the NEXT_LOCALE cookie in middleware, so the choice made here sticks without
- * any client-side cookie handling.
+ * Explicit override for the language middleware picked. The choice lives in the URL and
+ * nothing is stored, so it persists while browsing and in a shared or bookmarked link,
+ * but a later visit to the bare domain follows the browser again. That is the deliberate
+ * price of the site setting no cookies.
  */
 const LanguageSwitch = () => {
     const { asPath, locale } = useRouter();

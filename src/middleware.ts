@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const SUPPORTED = ['en', 'de'] as const;
 const DEFAULT_LOCALE = 'en';
-const COOKIE = 'NEXT_LOCALE';
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
 const PUBLIC_FILE = /\.(.*)$/;
 
@@ -43,6 +41,17 @@ const parseAcceptLanguage = (header: string | null): Locale | null => {
     return match && isSupported(match.language) ? match.language : null;
 };
 
+/**
+ * Sends un-prefixed URLs to a language.
+ *
+ * Deliberately stateless: the choice is read from the Accept-Language header the browser
+ * sends anyway and is never stored. This site sets no cookies at all, which is what makes
+ * its privacy position simple — nothing to disclose and nothing to ask consent for.
+ *
+ * The cost is that an explicit switch to the other language does not survive a later visit
+ * to the bare domain: locale lives in the URL, so it persists while browsing and in any
+ * shared or bookmarked link, but a fresh visit to `/` follows the browser again.
+ */
 export const middleware = (req: NextRequest) => {
     const { pathname, search, locale } = req.nextUrl;
 
@@ -50,31 +59,18 @@ export const middleware = (req: NextRequest) => {
         return undefined;
     }
 
-    // A real locale in the URL is an explicit choice — from the switcher or a shared link.
-    // Remember it so the next un-prefixed visit lands in the same language.
+    // A real locale in the URL is already an explicit choice — leave it alone.
     if (locale !== 'default') {
-        const response = NextResponse.next();
-
-        if (req.cookies.get(COOKIE)?.value !== locale) {
-            response.cookies.set(COOKIE, locale, { maxAge: COOKIE_MAX_AGE, sameSite: 'lax', path: '/' });
-        }
-
-        return response;
+        return undefined;
     }
 
-    const remembered = req.cookies.get(COOKIE)?.value;
-    const resolved =
-        remembered && isSupported(remembered)
-            ? remembered
-            : (parseAcceptLanguage(req.headers.get('accept-language')) ?? DEFAULT_LOCALE);
+    const resolved = parseAcceptLanguage(req.headers.get('accept-language')) ?? DEFAULT_LOCALE;
 
     // pathname is '/' at the root; keeping it would redirect to '/de/' and give every
     // page two spellings for search engines to reconcile.
     const target = pathname === '/' ? '' : pathname;
-    const response = NextResponse.redirect(new URL(`/${resolved}${target}${search}`, req.url));
-    response.cookies.set(COOKIE, resolved, { maxAge: COOKIE_MAX_AGE, sameSite: 'lax', path: '/' });
 
-    return response;
+    return NextResponse.redirect(new URL(`/${resolved}${target}${search}`, req.url));
 };
 
 export const config = {
