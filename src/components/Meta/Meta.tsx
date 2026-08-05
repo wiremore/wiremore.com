@@ -20,7 +20,13 @@ const Meta = ({ title, description }: MetaProps) => {
     // canonical version of /work, which is the opposite of what a canonical is for.
     const [pathname] = asPath.split(/[?#]/);
     const path = pathname === '/' ? '' : pathname;
-    const canonical = `${SITE_URL}/${locale ?? 'en'}${path}`;
+
+    // `default` is the sentinel locale that owns the un-prefixed route, and Next prerenders
+    // every page under it. `?? 'en'` does not catch it — it is a string, not undefined — so
+    // without this those pages would each declare a canonical of /default/… , a URL that is
+    // not meant to exist and that middleware redirects away from.
+    const language = !locale || locale === 'default' ? 'en' : locale;
+    const canonical = `${SITE_URL}/${language}${path}`;
     const fullTitle = title ? `${title} — ${t('meta.siteName')}` : t('meta.defaultTitle');
 
     return (
@@ -38,7 +44,7 @@ const Meta = ({ title, description }: MetaProps) => {
             <meta content={description} property="og:description" />
             <meta content={canonical} property="og:url" />
             <meta content={t('meta.siteName')} property="og:site_name" />
-            <meta content={locale === 'de' ? 'de_DE' : 'en_GB'} property="og:locale" />
+            <meta content={language === 'de' ? 'de_DE' : 'en_GB'} property="og:locale" />
             <meta content="website" property="og:type" />
             <meta content="summary" name="twitter:card" />
         </Head>
