@@ -33,7 +33,7 @@ const scramble = (source: string, revealed: number) =>
 const DecodeText = ({ text, delay = 0, as: Element = 'span', className }: DecodeTextProps) => {
     const prefersReducedMotion = usePrefersReducedMotion();
     const [displayed, setDisplayed] = useState(text);
-    const frame = useRef<number>(undefined);
+    const frame = useRef<number | null>(null);
 
     useEffect(() => {
         if (prefersReducedMotion) {
@@ -70,8 +70,9 @@ const DecodeText = ({ text, delay = 0, as: Element = 'span', className }: Decode
         return () => {
             clearTimeout(timeout);
 
-            if (frame.current) {
+            if (frame.current !== null) {
                 cancelAnimationFrame(frame.current);
+                frame.current = null;
             }
         };
     }, [delay, prefersReducedMotion, text]);

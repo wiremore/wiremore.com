@@ -15,7 +15,11 @@ const Meta = ({ title, description }: MetaProps) => {
     const { asPath, locale } = useRouter();
     const { t } = useTranslation();
 
-    const path = asPath === '/' ? '' : asPath;
+    // asPath carries the query string and hash. Leaving them in would mint a distinct
+    // canonical for every campaign link — /work?utm_source=… would declare itself the
+    // canonical version of /work, which is the opposite of what a canonical is for.
+    const [pathname] = asPath.split(/[?#]/);
+    const path = pathname === '/' ? '' : pathname;
     const canonical = `${SITE_URL}/${locale ?? 'en'}${path}`;
     const fullTitle = title ? `${title} — ${t('meta.siteName')}` : t('meta.defaultTitle');
 

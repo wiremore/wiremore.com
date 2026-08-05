@@ -51,7 +51,11 @@ const Studio = () => {
                                         book: <cite />,
                                         site: (
                                             // eslint-disable-next-line jsx-a11y/anchor-has-content
-                                            <a href="https://www.manuelbieh.de" rel="noreferrer" target="_blank" />
+                                            <a
+                                                href="https://www.manuelbieh.de"
+                                                rel="noopener noreferrer"
+                                                target="_blank"
+                                            />
                                         ),
                                     }}
                                     i18nKey={`studio.principal.text.${index}`}
