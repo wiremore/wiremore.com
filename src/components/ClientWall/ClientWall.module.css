@@ -35,7 +35,11 @@
     background-color: var(--paper);
     display: flex;
     justify-content: center;
-    padding: var(--space-5);
+
+    /* Tighter horizontally than vertically: wide, thin marks (Daimler, Rocket Internet)
+       are limited by cell width rather than by max-height, so they only grow if the side
+       padding gives way. */
+    padding: var(--space-5) var(--space-4);
 }
 
 /* brightness(0) flattens every mark to a solid silhouette regardless of its own colour.
@@ -44,7 +48,7 @@
 .logo {
     filter: grayscale(1) brightness(0);
     height: auto;
-    max-height: 2.4rem;
+    max-height: 3.6rem;
     object-fit: contain;
     opacity: 0.45;
     width: auto;
@@ -64,4 +68,26 @@
 .cell:hover .logo {
     filter: none;
     opacity: 1;
+}
+
+/* Sector filtering. Matches come up in their own colours and the rest recede rather than
+   disappear — the shape of the wall should stay intact, so it reads as focus being
+   redirected rather than as cells being removed. */
+.match .logo {
+    filter: none;
+    opacity: 1;
+}
+
+.miss .logo {
+    opacity: 0.12;
+}
+
+/* Sit the matches on paper while the section around them is dim, so the picked cells
+   look lit rather than merely darker. */
+.filtering .match {
+    background-color: var(--paper);
+}
+
+.filtering .miss {
+    background-color: color-mix(in srgb, var(--paper) 70%, var(--paper-dim));
 }

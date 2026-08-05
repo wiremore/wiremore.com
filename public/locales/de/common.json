@@ -212,7 +212,16 @@
         "title": "Arbeiten",
         "lead": "Startups, Konzerne und eine ganze Menge dazwischen. Direkte Mandate und Arbeiten, die über Agenturen liefen.",
         "sectorsLabel": "Branchen",
-        "sectors": "Automotive · Banken und regulierte Finanzwirtschaft · E-Commerce · Gesundheit · Medien · Logistik · Mobilität",
+        "sectorsHint": "Zeigen Sie auf eine Branche, um sie aus der Wand herauszulösen.",
+        "sectors": {
+            "automotive": "Automotive",
+            "finance": "Banken und regulierte Finanzwirtschaft",
+            "commerce": "E-Commerce und Handel",
+            "health": "Gesundheit",
+            "media": "Medien",
+            "logistics": "Logistik und Mobilität",
+            "industry": "Industrie"
+        },
         "clientsLabel": "Ausgewählte Kunden",
         "note": "adidas im Auftrag von Sevenval. Migros und Rossmann im Auftrag von Aperto. DocMorris im Auftrag von Publicis Pixelpark.",
         "nda": {

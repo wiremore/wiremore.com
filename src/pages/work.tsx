@@ -1,15 +1,22 @@
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import Meta from '@/components/Meta/Meta';
 import PageIntro from '@/components/PageIntro/PageIntro';
 import Section from '@/components/Section/Section';
 import Reveal from '@/components/Reveal/Reveal';
 import ClientWall from '@/components/ClientWall/ClientWall';
-import { CLIENTS } from '@/config/clients';
+import SectorFilter from '@/components/SectorFilter/SectorFilter';
+import { CLIENTS, SectorId } from '@/config/clients';
 import { translatedPage } from '@/utils/translatedPage';
 import css from './work.module.css';
 
 const Work = () => {
     const { t } = useTranslation();
+    const [sector, setSector] = useState<SectorId | null>(null);
+
+    // Stable identity: SectorFilter reports through an effect, and a fresh function every
+    // render would make that effect fire on every render.
+    const handleSectorChange = useCallback((next: SectorId | null) => setSector(next), []);
 
     return (
         <>
@@ -18,13 +25,12 @@ const Work = () => {
             <PageIntro lead={t('work.lead')} title={t('work.title')} />
 
             <Section>
-                <Reveal className={css.meta}>
-                    <p className={css.metaLabel}>{t('work.sectorsLabel')}</p>
-                    <p className={css.sectors}>{t('work.sectors')}</p>
+                <Reveal>
+                    <SectorFilter onChange={handleSectorChange} />
                 </Reveal>
 
                 <Reveal>
-                    <ClientWall clients={CLIENTS} />
+                    <ClientWall clients={CLIENTS} highlighted={sector} />
                     <p className={css.note}>{t('work.note')}</p>
                 </Reveal>
             </Section>

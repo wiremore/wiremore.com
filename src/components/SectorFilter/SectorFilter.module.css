@@ -1,0 +1,82 @@
+.filter {
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 1fr;
+    margin-bottom: var(--space-7);
+    padding-bottom: var(--space-5);
+}
+
+@media (--md) {
+    .filter {
+        column-gap: var(--space-6);
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.label {
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: var(--step-mono);
+    letter-spacing: 0.1em;
+    padding-top: 0.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    list-style: none;
+    padding: 0;
+}
+
+.sector {
+    background: none;
+    border: 0;
+    color: var(--ink-soft);
+    cursor: pointer;
+    padding: 0 0 2px;
+    position: relative;
+    text-align: left;
+}
+
+/* A phosphor rule that grows from the left, so the sectors read as switches rather than
+   as links. Stepped, to match the logo wall it drives. */
+.sector::after {
+    background-color: var(--phosphor);
+    bottom: 0;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    width: 100%;
+}
+
+@media (--motion-ok) {
+    .sector::after {
+        transition: transform 90ms var(--ease-steps);
+    }
+}
+
+.active {
+    color: var(--ink);
+}
+
+.active::after {
+    transform: scaleX(1);
+}
+
+.hint {
+    color: var(--muted);
+    font-size: var(--step--1);
+}
+
+@media (--md) {
+    .hint {
+        grid-column: 2;
+    }
+}

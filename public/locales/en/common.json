@@ -212,7 +212,16 @@
         "title": "Work",
         "lead": "Startups, corporations, and a good deal in between. Direct engagements and work delivered through agencies.",
         "sectorsLabel": "Sectors",
-        "sectors": "Automotive · Banking and regulated finance · E-commerce · Health · Media · Logistics · Mobility",
+        "sectorsHint": "Point at a sector to pick it out of the wall.",
+        "sectors": {
+            "automotive": "Automotive",
+            "finance": "Banking and regulated finance",
+            "commerce": "E-commerce and retail",
+            "health": "Health",
+            "media": "Media",
+            "logistics": "Logistics and mobility",
+            "industry": "Industry"
+        },
         "clientsLabel": "Selected clients",
         "note": "adidas on behalf of Sevenval. Migros and Rossmann on behalf of Aperto. DocMorris on behalf of Publicis Pixelpark.",
         "nda": {
