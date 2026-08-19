@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import cx from 'classnames';
@@ -17,7 +18,7 @@ const LanguageSwitch = () => {
     return (
         <div className={css.switch}>
             {LOCALES.map((code, index) => (
-                <span key={code}>
+                <Fragment key={code}>
                     {index > 0 && (
                         <span aria-hidden className={css.divider}>
                             /
@@ -32,7 +33,7 @@ const LanguageSwitch = () => {
                     >
                         {code.toUpperCase()}
                     </Link>
-                </span>
+                </Fragment>
             ))}
         </div>
     );

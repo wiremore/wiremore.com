@@ -21,7 +21,9 @@
 }
 
 /* The active language sits on a phosphor underline — one of the accent's four
-   appearances per page. */
+   appearances per page. The links and the divider are siblings in the flex row rather
+   than the links being wrapped: a wrapper would be the ::after's containing block, and
+   `width: 100%` would then stretch the underline back across the slash. */
 .active::after {
     background-color: var(--phosphor);
     content: '';
