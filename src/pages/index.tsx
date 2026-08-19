@@ -55,7 +55,7 @@ const Home = () => {
             >
                 <Reveal>
                     <ClientWall clients={FEATURED_CLIENTS} />
-                    <Link className={css.more} href="/work">
+                    <Link className={css.more} href="/clients">
                         {t('home.clients.more')}
                     </Link>
                 </Reveal>

@@ -22,7 +22,7 @@ export type Client = {
  * Ordered for the wall rather than chronologically — recognisable marks first, so the
  * grid reads at a glance. `FEATURED_CLIENTS` takes the first two rows on the home page.
  *
- * Sectors drive the hover filter on /work. Every client carries at least one, otherwise
+ * Sectors drive the hover filter on /clients. Every client carries at least one, otherwise
  * it could never light up and would read as a broken cell.
  *
  * Assignments come from the project notes in the CV data, with TomTom, Service Partner ONE

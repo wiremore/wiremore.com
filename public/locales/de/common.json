@@ -6,7 +6,7 @@
             "home": "wiremore ist ein Studio für Produktentwicklung in Berlin. Wir bauen, retten und führen Softwareprodukte für Unternehmen, die sich Fehler nicht leisten können.",
             "whatWeDo": "Drei Arten der Zusammenarbeit: neue Produkte bauen, fragil gewordene Codebasen retten, technische Führung auf Zeit.",
             "howWeWork": "Wenige Projekte gleichzeitig, ausschließlich erfahrene Leute, Qualität erzwungen statt beabsichtigt. Wie ein kleines Studio den Qualitätsanspruch eines großen Teams hält.",
-            "work": "Ausgewählte Kunden: Porsche, Daimler, Zalando, Börse Stuttgart Digital Exchange, Klarna, TomTom und andere.",
+            "clients": "Ausgewählte Kunden: Porsche, Daimler, Zalando, Börse Stuttgart Digital Exchange, Klarna, TomTom und andere.",
             "studio": "wiremore GmbH, Berlin. Unabhängig, bewusst klein, getragen von einem Netzwerk erfahrener Profis.",
             "contact": "Erzählen Sie uns, was Sie bauen. Per E-Mail erreichen Sie das Studio am schnellsten.",
             "legal": "Impressum der wiremore GmbH, Berlin.",
@@ -19,7 +19,7 @@
         "skip": "Zum Inhalt springen",
         "whatWeDo": "Was wir tun",
         "howWeWork": "Wie wir arbeiten",
-        "work": "Arbeiten",
+        "clients": "Kunden",
         "studio": "Studio",
         "contact": "Kontakt",
         "legal": "Impressum",
@@ -208,8 +208,8 @@
         ]
     },
 
-    "work": {
-        "title": "Arbeiten",
+    "clients": {
+        "title": "Kunden",
         "lead": "Startups, Konzerne und eine ganze Menge dazwischen. Direkte Mandate und Arbeiten, die über Agenturen liefen.",
         "sectorsLabel": "Branchen",
         "sectorsHint": "Zeigen Sie auf eine Branche, um sie aus der Wand herauszulösen.",

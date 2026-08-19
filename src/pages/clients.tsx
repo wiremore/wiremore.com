@@ -8,9 +8,9 @@ import ClientWall from '@/components/ClientWall/ClientWall';
 import SectorFilter from '@/components/SectorFilter/SectorFilter';
 import { CLIENTS, SectorId } from '@/config/clients';
 import { translatedPage } from '@/utils/translatedPage';
-import css from './work.module.css';
+import css from './clients.module.css';
 
-const Work = () => {
+const Clients = () => {
     const { t } = useTranslation();
     const [sector, setSector] = useState<SectorId | null>(null);
 
@@ -20,9 +20,9 @@ const Work = () => {
 
     return (
         <>
-            <Meta description={t('meta.descriptions.work')} title={t('work.title')} />
+            <Meta description={t('meta.descriptions.clients')} title={t('clients.title')} />
 
-            <PageIntro lead={t('work.lead')} title={t('work.title')} />
+            <PageIntro lead={t('clients.lead')} title={t('clients.title')} />
 
             <Section>
                 <Reveal>
@@ -31,14 +31,14 @@ const Work = () => {
 
                 <Reveal>
                     <ClientWall clients={CLIENTS} highlighted={sector} />
-                    <p className={css.note}>{t('work.note')}</p>
+                    <p className={css.note}>{t('clients.note')}</p>
                 </Reveal>
             </Section>
 
             <Section tone="dark">
                 <Reveal className={css.nda}>
-                    <h2 className={css.ndaTitle}>{t('work.nda.title')}</h2>
-                    <p className={css.ndaText}>{t('work.nda.text')}</p>
+                    <h2 className={css.ndaTitle}>{t('clients.nda.title')}</h2>
+                    <p className={css.ndaText}>{t('clients.nda.text')}</p>
                 </Reveal>
             </Section>
         </>
@@ -47,4 +47,4 @@ const Work = () => {
 
 export const getStaticProps = translatedPage;
 
-export default Work;
+export default Clients;

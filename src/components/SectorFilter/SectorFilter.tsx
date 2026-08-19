@@ -30,7 +30,7 @@ const SectorFilter = ({ onChange }: SectorFilterProps) => {
 
     return (
         <div className={css.filter}>
-            <p className={css.label}>{t('work.sectorsLabel')}</p>
+            <p className={css.label}>{t('clients.sectorsLabel')}</p>
 
             <ul className={css.list} onMouseLeave={() => setHovered(null)}>
                 {SECTOR_IDS.map((sector) => (
@@ -44,13 +44,13 @@ const SectorFilter = ({ onChange }: SectorFilterProps) => {
                             onMouseEnter={() => setHovered(sector)}
                             type="button"
                         >
-                            {t(`work.sectors.${sector}`)}
+                            {t(`clients.sectors.${sector}`)}
                         </button>
                     </li>
                 ))}
             </ul>
 
-            <p className={css.hint}>{t('work.sectorsHint')}</p>
+            <p className={css.hint}>{t('clients.sectorsHint')}</p>
         </div>
     );
 };
